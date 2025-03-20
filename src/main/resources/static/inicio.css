@@ -1,0 +1,147 @@
+/* styles.css */
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color:#000000;
+    color: #000000;
+}
+
+header {
+    
+    font-style:italic !important;
+    background-color:#000000;
+    color: #000000fc;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    border-bottom: 3px solid #000000;
+}
+
+#logo {
+    position: relative; /* Necessário para o texto ser posicionado em cima do vídeo */
+    width: 100%; /* Largura completa da seção */
+    height: 100vh; /* Altura da seção, pode ajustar conforme necessário */
+  }
+  
+  #logo video {
+    width: 100%; /* Faz o vídeo ocupar toda a largura da seção */
+    height: 100%; /* Faz o vídeo ocupar toda a altura da seção */
+    object-fit: cover; /* Garante que o vídeo cubra toda a área do contêiner */
+  }
+  
+  .texto-overlay {
+    position: absolute;
+    top: 50%; /* Posiciona verticalmente no meio */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%) translateY(-50%); /* Centraliza o texto vertical e horizontalmente */
+    padding: 30px 40px; /* Espaçamento interno do quadrado */
+    background-color: rgba(27, 20, 20, 0.5); /* Fundo preto com opacidade de 50% */
+    color: white; /* Cor do texto */
+    font-size: 50px !important; /* Tamanho do texto */
+    text-align: center; /* Centraliza o texto dentro do quadrado */
+    z-index: 10; /* Garante que o texto fique acima do vídeo */
+    white-space: nowrap; /* Impede a quebra de linha do texto */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse a largura */
+    text-overflow: ellipsis; /* Adiciona "..." no final do texto se ele ultrapassar a largura */
+    width: 100%; /* Faz o quadrado ocupar toda a largura da seção */
+    box-sizing: border-box; /* Inclui o padding dentro da largura total */
+    font-variant: small-caps; font-family: 'Playfair Display', serif;
+
+  }
+  
+  
+h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    background-color: #000000;
+    color: #9c9898  ;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    color: #f2eded;
+    background-color: #000000;
+    transform: scale(1.05);
+}
+
+.logo{
+
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.banner {
+
+    background-color:#000000;
+    justify-content:flex-end;
+    align-items:self-start;
+    text-align:end; 
+    color: rgb(239, 236, 236);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+}
+
+.banner h2 {
+    
+    align-items:self-start!important;
+    font-size: 30px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.banner p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.sobre {
+    padding: 60px;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 40px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
+.sobre h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #1c1c1c;
+}
+
+.sobre p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-top: 3px solid #b17991;
+}
