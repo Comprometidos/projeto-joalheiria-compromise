@@ -33,10 +33,6 @@ public class Produto {
     @JoinColumn(name = "idTipo", nullable = false)
     private TipoProduto tipo;
 
-    @ManyToOne
-    @JoinColumn(name = "idMaterial", nullable = false)
-    private Material material;
-
     @ManyToMany
     @JoinTable(
         name = "tb_produto_ornamento",
@@ -49,12 +45,11 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(Long idProduto, String nomeProduto, CategoriaProduto categoria, TipoProduto tipo, Material material, Set<Ornamentos> pedras) {
+    public Produto(Long idProduto, String nomeProduto, CategoriaProduto categoria, TipoProduto tipo,  Set<Ornamentos> pedras) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.categoria = categoria;
         this.tipo = tipo;
-        this.material = material;
         this.pedras = pedras;
     }
 
@@ -89,14 +84,6 @@ public class Produto {
 
     public void setTipo(TipoProduto tipo) {
         this.tipo = tipo;
-    }
-
-    public Material getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(Material material) {
-        this.material = material;
     }
 
     public Set<Ornamentos> getPedras() {

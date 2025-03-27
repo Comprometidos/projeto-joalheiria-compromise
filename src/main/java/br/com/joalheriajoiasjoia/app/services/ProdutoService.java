@@ -39,7 +39,6 @@ public class ProdutoService {
             produto.setNomeProduto(produtoDetails.getNomeProduto());
             produto.setCategoria(produtoDetails.getCategoria());
             produto.setTipo(produtoDetails.getTipo());
-            produto.setMaterial(produtoDetails.getMaterial());
             produto.setPedras(produtoDetails.getPedras());
             return produtoRepository.save(produto);
         }

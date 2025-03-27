@@ -15,8 +15,8 @@ public class TipoUsuario {
     @Column(name = "idTipoUsuario", nullable = false)
     private Long idTipoUsuario;
     
-    @Column(name = "descricao", nullable = false, length = 50)
-    private String descricao;
+    @Column(name = "nomeTipoUsuario", nullable = false, length = 50)
+    private String nomeTipoUsuario;
 
     // Getters e Setters
     public Long getIdTipoUsuario() { 
@@ -26,10 +26,10 @@ public class TipoUsuario {
     	this.idTipoUsuario = idTipoUsuario; 
     }
     
-    public String getDescricao() { 
-    	return descricao; 
+    public String getNomeTipoUsuario() { 
+    	return nomeTipoUsuario; 
     }
-    public void setDescricao(String descricao) { 
-    	this.descricao = descricao; 
+    public void setNomeTipoUsuario(String NomeTipoUsuario) { 
+    	this.nomeTipoUsuario = NomeTipoUsuario; 
     }
 }

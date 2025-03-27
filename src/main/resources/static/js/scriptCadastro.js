@@ -21,7 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
 					cpf,
 					email,
 					telefone,
-					dataNascimento
+					dataNascimento,
+					senha,
+					tipoUsuario: {
+						id: 2
+					}
 				}),
 			});
 

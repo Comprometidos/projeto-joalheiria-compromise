@@ -34,6 +34,9 @@ public class Usuario {
 	@Column(name = "dt_nascimento", unique = false)
 	private LocalDate dataNascimento;
 	
+	@Column(name = "senha", unique = false)
+	private String senha;
+	
 	@ManyToOne
     @JoinColumn(name = "idTipoUsuario", nullable = false)
     private TipoUsuario tipoUsuario;
