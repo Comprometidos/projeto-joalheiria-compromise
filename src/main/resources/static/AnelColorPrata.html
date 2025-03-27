@@ -1,19 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Joia Exclusiva - Anel de Diamante Rosa</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f3f3;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .product-container {
+            display: flex;
+            gap: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+        .product-image-container {
+            flex: 1;
+        }
+        
+        .product-info {
+            flex: 2;
+        }
+        
+        .product-image {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-image:hover {
+            transform: scale(1.03);
+        }
+        
+        h1 {
+            color: #d36b8b;
+            font-size: 2.2rem;
+            margin: 0 0 20px 0;
+            letter-spacing: 1px;
+        }
+        
+        .price {
+            color: #b24c6e;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .payment-method {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #a83a6a;
+            border-bottom: 2px solid #f0d0d8;
+            padding-bottom: 8px;
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
+        
+        .specs {
+            background-color: #fdf9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            color: #b24c6e;
+            font-weight: 600;
+        }
+        
+        .measures-tab {
+            margin-top: 30px;
+            border: 1px solid #f0d0d8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .tab-header {
+            background-color: #d36b8b;
+            color: white;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .tab-content {
+            padding: 20px;
+            display: none;
+            background-color: white;
+        }
+        
+        .measures-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .measures-table th, .measures-table td {
+            border: 1px solid #f0d0d8;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .measures-table th {
+            background-color: #fdf9fa;
+        }
+    </style>
 </head>
 <body>
-    
-   <center> <img src="img/Anel-Color-em-Prata-925-com-Rodolita-e-Topazios-9262_1_set.webp" alt="" width="700" height="500"></center>
-   <h1>|Anel de diamante rosa|<br></h1>
-     <h3>R$155.400 (Avista)</h3>
-       <h2>Feito:</h2>
-           <h3>Prata 925/Rodalia/Topazios</h3>
+    <div class="product-container">
+        <div class="product-image-container">
+            <img src="img/Anel-Color-em-Prata-925-com-Rodolita-e-Topazios-9262_1_set.webp" 
+                 alt="Anel de prata 925 com rodolita e topázios" 
+                 class="product-image">
+        </div>
+        
+        <div class="product-info">
+            <h1>Anel de Diamante Rosa</h1>
+            
+            <div class="price">R$ 155.400</div>
+            <div class="payment-method">(à vista com 5% de desconto)</div>
+            
+            <div class="measures-tab">
+              <div class="tab-header" onclick="toggleTab()">▼ Medidas do Anel</div>
+              <div class="tab-content" id="measuresTab">
+                  <table class="measures-table">
+                      <tr>
+                          <th>Medida</th>
+                          <th>Valor</th>
+                      </tr>
+                      <tr>
+                          <td>Diâmetro interno</td>
+                          <td>17.3 mm</td>
+                      </tr>
+                      <tr>
+                          <td>Largura do aro</td>
+                          <td>2.5 mm</td>
+                      </tr>
+                      <tr>
+                          <td>Altura da pedra central</td>
+                          <td>6.2 mm</td>
+                      </tr>
+                      <tr>
+                          <td>Peso total</td>
+                          <td>4.8 g</td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
 
+            <h2>Descrição da Joia</h2>
+            <div class="specs">
+                <p>Este elegante anel combina o brilho sofisticado da <span class="highlight">Prata 925</span> com a beleza rara da <span class="highlight">Rodolita</span> natural, complementado por delicados <span class="highlight">Topázios</span> facetados.</p>
+                <p>Produzido artesanalmente com acabamento manual polido para garantir máximo brilho e durabilidade. Uma peça exclusiva para ocasiões especiais.</p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function toggleTab() {
+            const tab = document.getElementById('measuresTab');
+            const header = document.querySelector('.tab-header');
+            
+            if (tab.style.display === 'block') {
+                tab.style.display = 'none';
+                header.textContent = '▼ Medidas do Anel';
+            } else {
+                tab.style.display = 'block';
+                header.textContent = '▲ Medidas do Anel';
+            }
+        }
+    </script>
 </body>
 </html>
-
-
