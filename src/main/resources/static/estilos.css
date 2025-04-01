@@ -13,21 +13,21 @@ body {
   border: 1px solid rgb(255, 255, 255);
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 50px rgba(1, 1, 1, 0.352);
+  box-shadow: 0 0 50px rgba(19, 19, 19, 0.352);
   width: 300px;
 }
 
 
 h2 {
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: rgb(11, 11, 11);
 }
 
 label {
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
-  color:rgb(0, 0, 0);
+  color:rgb(6, 6, 6);
 }
 
 
@@ -44,7 +44,7 @@ button{
   border-radius: 50px;
   border: 2px solid #084b53;
   background-color: #084b53;
-  color: rgb(1, 1, 1);
+  color: rgb(7, 7, 7);
   font-weight: bold;
   cursor: pointer;
   padding: 15px;
@@ -52,5 +52,5 @@ button{
 button:hover{
   border: 2px solid #0a707b;
   background-color: #0a707b;
-  color: aliceblue;
+  color: rgb(255, 255, 255);
 }
