@@ -135,6 +135,60 @@ nav {
     line-height: 1.6;
 }
 
+
+.sobre {
+    text-align: center; /* Centraliza o título */
+}
+
+.equipe {
+    display: flex;
+    justify-content: center; /* Centraliza os membros horizontalmente */
+    gap: 20px; /* Adiciona espaço entre os membros */
+    flex-wrap: wrap; /* Permite que os membros se ajustem em várias linhas, se necessário */
+}
+
+.membro {
+    text-align: center; /* Centraliza o conteúdo do membro */
+    max-width: 200px; /* Define um tamanho máximo para cada membro */
+}
+
+.membro img {
+    width: 160px; /* Ajusta a largura das imagens */
+    height: 160px; /* Ajusta a altura das imagens */
+    border-radius: 50%; /* Torna as imagens redondas */
+    object-fit: cover; /* Garante que a imagem cubra a área circular sem distorcer */
+    margin-bottom: 10px; /* Adiciona um espaçamento entre a imagem e o nome */
+}
+
+.membro h3 {
+    margin: 5px 0; /* Dá um pequeno espaçamento entre o nome e o link */
+}
+
+.membro a {
+    text-decoration: none !important; /* Remove o sublinhado do link */
+    color: #000000; /* Cor do LinkedIn */
+}
+
+.membro a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre o link */
+}
+
+button{
+    border-radius: 10px;
+    background-color: #0077b5;
+    border: none;
+   
+    
+}
+
+button p{
+    color: #ffffff;
+    width: 100px;
+    height: 10px;
+    font-size: 12px !important;
+   
+}
+
 footer {
     background-color: #fff7f7;
     color: #ffffff;
