@@ -30,7 +30,7 @@ public class Produto {
     private CategoriaProduto categoria;
 
     @ManyToOne
-    @JoinColumn(name = "idTipo", nullable = false)
+    @JoinColumn(name = "idTipoProduto", nullable = false)
     private TipoProduto tipo;
 
     @ManyToMany

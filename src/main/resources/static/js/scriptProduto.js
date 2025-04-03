@@ -2,88 +2,93 @@ document.addEventListener('DOMContentLoaded', function() {
     const formProduto = document.getElementById('formProduto');
     const listaProdutos = document.getElementById('listaProdutos');
     
-    // Array para armazenar os produtos (substituir por API real posteriormente)
-    let produtos = [];
-    
-    // Função para carregar produtos (simulando uma API)
-    function carregarProdutos() {
-		
-        // Simulando dados
-        produtos = [
-            { id: 1, nome: "Anel de Ouro", material: "Ouro 18k", categoria: "Anéis", tipo: "Ouro" },
-            { id: 2, nome: "Colar de Prata", material: "Prata 925", categoria: "Colares", tipo: "Prata" }
-        ];
-        exibirProdutos();
-    }
-    
-    // Função para exibir produtos na lista
+    // Carrega produtos do localStorage ou inicia array vazio
+    let produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+
+    // Exibe os produtos na lista
     function exibirProdutos() {
         listaProdutos.innerHTML = '';
         
         produtos.forEach(produto => {
             const li = document.createElement('li');
             li.innerHTML = `
-                <strong>${produto.nome}</strong> - ${produto.material}
-                <br>Categoria: ${produto.categoria} | Tipo: ${produto.tipo}
+                <strong>${produto.nome}</strong> - ${produto.ornamento}
+                <br>Categoria: ${this.getCategoriaTexto(produto.categoria)} | Tipo: ${this.getTipoTexto(produto.tipo)}
                 <button onclick="editarProduto(${produto.id})">Editar</button>
                 <button onclick="excluirProduto(${produto.id})">Excluir</button>
             `;
             listaProdutos.appendChild(li);
         });
     }
-    
-    // Função para adicionar produto
+
+    // Retorna o texto da categoria
+    function getCategoriaTexto(valor) {
+        const categorias = {
+            '1': 'Anéis',
+            '2': 'Colares',
+            '3': 'Brincos',
+            '4': 'Pulseiras',
+            '5': 'Relógios'
+        };
+        return categorias[valor] || valor;
+    }
+
+    // Retorna o texto do tipo
+    function getTipoTexto(valor) {
+        const tipos = {
+            '1': 'Ouro',
+            '2': 'Prata',
+            '3': 'Bijuteria'
+        };
+        return tipos[valor] || valor;
+    }
+
+    // Adiciona novo produto
     formProduto.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const nomeProduto = document.getElementById('nomeProduto').value;
-        const material = document.getElementById('material').value;
-        
-        // Obter texto da categoria e tipo selecionados
-        const categoriaTexto = document.querySelector('#categoriaProduto option:checked').text;
-        const tipoTexto = document.querySelector('#tipoProduto option:checked').text;
-        
-        // Criar novo produto
         const novoProduto = {
             id: produtos.length > 0 ? Math.max(...produtos.map(p => p.id)) + 1 : 1,
-            nome: nomeProduto,
-            material: material,
-			categoria: {
-				id: categoria
-			}, 
-			tipo: {
-                id: tipo
-			}
+            nome: document.getElementById('idProduto').value,
+            ornamento: document.getElementById('idOrnamentos').value,
+            categoria: document.getElementById('idCategoria').value,
+            tipo: document.getElementById('idTipoProduto').value
         };
         
-        // Simulando adição
         produtos.push(novoProduto);
+        localStorage.setItem('produtos', JSON.stringify(produtos));
         exibirProdutos();
         formProduto.reset();
         
         alert('Produto adicionado com sucesso!');
     });
-    
-    // Funções para editar e excluir (simplificadas)
+
+    // Função para editar produto
     window.editarProduto = function(id) {
         const produto = produtos.find(p => p.id === id);
         if (produto) {
-            document.getElementById('nomeProduto').value = produto.nome;
-            document.getElementById('material').value = produto.material;
+            document.getElementById('idProduto').value = produto.nome;
+            document.getElementById('idOrnamentos').value = produto.ornamento;
+            document.getElementById('idCategoria').value = produto.categoria;
+            document.getElementById('idTipoProduto').value = produto.tipo;
             
-            // Aqui você implementaria a lógica para atualizar o produto
-            alert(`Editar produto ${produto.nome} (ID: ${id})`);
+            // Remove o produto da lista
+            produtos = produtos.filter(p => p.id !== id);
+            localStorage.setItem('produtos', JSON.stringify(produtos));
+            exibirProdutos();
         }
     };
-    
+
+    // Função para excluir produto
     window.excluirProduto = function(id) {
         if (confirm('Tem certeza que deseja excluir este produto?')) {
             produtos = produtos.filter(p => p.id !== id);
+            localStorage.setItem('produtos', JSON.stringify(produtos));
             exibirProdutos();
             alert('Produto excluído com sucesso!');
         }
     };
-    
-    // Carregar produtos quando a página é carregada
-    carregarProdutos();
+
+    // Carrega os produtos ao iniciar
+    exibirProdutos();
 });

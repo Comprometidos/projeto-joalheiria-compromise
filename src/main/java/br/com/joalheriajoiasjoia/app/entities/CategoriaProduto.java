@@ -22,6 +22,9 @@ public class CategoriaProduto {
     @Column(name = "nomeCategoria", nullable = false, length = 100)
     private String nomeCategoria;
 
+    @Column(name = "descricaoCategoria", nullable = false)
+    private String descricaoCategoria;
+    
     @OneToMany(mappedBy = "categoria")
     private Set<Produto> produtos;
 
@@ -29,9 +32,10 @@ public class CategoriaProduto {
     public CategoriaProduto() {
     }
 
-    public CategoriaProduto(Long idCategoria, String nomeCategoria) {
+    public CategoriaProduto(Long idCategoria, String nomeCategoria, String descricaoCategoria) {
         this.idCategoria = idCategoria;
         this.nomeCategoria = nomeCategoria;
+        this.descricaoCategoria = descricaoCategoria;
     }
 
     // Getters e Setters
@@ -50,7 +54,15 @@ public class CategoriaProduto {
     public void setNomeCategoria(String nomeCategoria) {
         this.nomeCategoria = nomeCategoria;
     }
+    
+    public String getDescricaoCategoria() {
+        return descricaoCategoria;
+    }
 
+    public void setDescricaoCategoria(String descricaoCategoria) {
+        this.descricaoCategoria = descricaoCategoria;
+    }
+    
     public Set<Produto> getProdutos() {
         return produtos;
     }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gerenciamento de Produtos</h1>
+
+    <form id="formProduto">
+        <h2>Adicionar Produto</h2>
+        <label for="idProduto">Nome do Produto:</label>
+        <input type="text" id="idProduto" required>
+        
+        <label for="idOrnamentos">Ornamento:</label>
+        <input type="text" id="idOrnamentos" required>
+        
+        <label for="idCategoria">Categoria:</label>
+        <select id="idCategoria" required>
+            <option value="">Selecione uma categoria</option>
+            <option value="1">Anéis</option>
+            <option value="2">Colares</option>
+            <option value="3">Brincos</option>
+            <option value="4">Pulseiras</option>
+            <option value="5">Relógios</option>
+        </select>
+        
+        <label for="idTipoProduto">Tipo:</label>
+        <select id="idTipoProduto" required>
+            <option value="">Selecione um tipo</option>
+            <option value="1">Ouro</option>
+            <option value="2">Prata</option>
+            <option value="3">Bijuteria</option>
+        </select>
+        
+        <button type="submit">Adicionar Produto</button>
+    </form>
+
+    <h2>Lista de Produtos</h2>
+    <ul id="listaProdutos"></ul>
+
+    <script src="scriptProduto.js"></script>
+</body>
+</html>

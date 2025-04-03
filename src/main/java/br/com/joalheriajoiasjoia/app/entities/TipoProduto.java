@@ -11,17 +11,20 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_tipo")
+@Table(name = "tb_tipo_produto")
 public class TipoProduto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idTipo", nullable = false)
+    @Column(name = "id_tipo_produto", nullable = false)
     private Long idTipo;
 
-    @Column(name = "nomeTipo", nullable = false, length = 100)
+    @Column(name = "nome_tipo_produto", nullable = false, length = 100)
     private String nomeTipo;
 
+    @Column(name = "descricao_tipo_produto", nullable = false)
+    private String descricaoProduto;
+    
     @OneToMany(mappedBy = "tipo")
     private Set<Produto> produtos;
 
@@ -29,9 +32,10 @@ public class TipoProduto {
     public TipoProduto() {
     }
 
-    public TipoProduto(Long idTipo, String nomeTipo) {
+    public TipoProduto(Long idTipo, String nomeTipo, String descricaoProduto) {
         this.idTipo = idTipo;
         this.nomeTipo = nomeTipo;
+        this.descricaoProduto = descricaoProduto;
     }
 
     // Getters e Setters
@@ -49,6 +53,14 @@ public class TipoProduto {
 
     public void setNomeTipo(String nomeTipo) {
         this.nomeTipo = nomeTipo;
+    }
+    
+    public String getDescricaoProduto() {
+    	return descricaoProduto;
+    }
+    
+    public void setDescricaoProduto(String descricaoProduto) {
+    	this.descricaoProduto = descricaoProduto;
     }
 
     public Set<Produto> getProdutos() {

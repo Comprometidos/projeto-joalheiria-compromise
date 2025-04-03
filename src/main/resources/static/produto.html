@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciamento de Produtos</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Opcional: para estilização -->
+    <title>Anel em Prata 925 com Rodolita e Topázios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="produto.css">
 </head>
-
 <body>
-    <h1>Gerenciamento de Produtos</h1>
-
-    <!-- Formulário para adicionar um novo produto -->
-    <form id="formProduto">
-        <h2>Adicionar Produto</h2>
-        <label for="nomeProduto">Nome do Produto:</label>
-        <input type="text" id="nomeProduto" name="nomeProduto" required>
-        <br>
-        <label for="material">Ornamento:</label>
-        <input type="text" id="material" name="material" required>
-		<br>
-		<label for="categoriaProduto">Categoria:</label>
-		            <select id="categoriaProduto" name="categoriaProduto" required>
-		                <option value="">Selecione uma categoria</option>
-		                <option value="1">Anéis</option>
-		                <option value="2">Colares</option>
-		                <option value="3">Brincos</option>
-		                <option value="4">Pulseiras</option>
-		                <option value="5">Relógios</option>
-		            </select>
-		<label for="tipoProduto">Tipo:</label>
-					<select id="tipoProduto" name="tipoProduto" required>
-		                <option value="">Selecione um tipo</option>
-		                <option value="1">Ouro</option>
-			            <option value="2">Prata</option>
-			            <option value="3">Bijuteria</option>
-		            </select>
-		<br>
-		<br>
-		<button type="submit">Adicionar Produto</button>
-    </form>
-
-    <!-- Lista de produtos -->
-    <h2>Lista de Produtos</h2>
-    <ul id="listaProdutos"></ul>
-
-    <!-- Importação do arquivo JavaScript -->
-    <script src="scripts.js"></script>
+    <div class="product-container">
+        <div class="product-image-container">
+            <img id="produto-img" src="img/Anel-Color-em-Prata-925-com-Rodolita-e-Topazios-9262_1_set.webp" alt="Anel em Prata 925 com Rodolita e Topázios">
+        </div>
+        <div class="product-info">
+            <h2 id="produto-nome">Anel em Prata 925 com Rodolita e Topázios</h2>
+            <p id="produto-descricao">Elegante anel em prata 925 com uma bela rodolita central rodeada por topázios azuis. Peça única e sofisticada, perfeita para complementar looks especiais.</p>
+            <p id="produto-preco">R$ 289,90</p>
+            <button class="btn-comprar">Comprar Agora</button>
+            
+            <div class="product-details">
+                <h3 class="details-title">Detalhes do Produto</h3>
+                <div class="specs">
+                    <p><span class="highlight">Material:</span> Prata 925 (prata pura com 92,5% de pureza)</p>
+                    <p><span class="highlight">Pedras:</span> 1 Rodolita central (6mm) + 6 Topázios azuis (2mm cada)</p>
+                    <p><span class="highlight">Garantia:</span> 1 ano contra defeitos de fabricação</p>
+                    <p><span class="highlight">Origem:</span> Fabricado no Brasil</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleTab() {
+            const tab = document.getElementById('measuresTab');
+            const header = document.querySelector('.tab-header');
+            
+            if (tab.style.display === 'block') {
+                tab.style.display = 'none';
+                header.classList.remove('active');
+            } else {
+                tab.style.display = 'block';
+                header.classList.add('active');
+            }
+        }
+        
+        // Mostrar a tabela de medidas ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('measuresTab').style.display = 'block';
+            document.querySelector('.tab-header').classList.add('active');
+        });
+    </script>
 </body>
-
 </html>
