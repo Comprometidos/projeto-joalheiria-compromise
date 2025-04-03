@@ -1,4 +1,4 @@
-INSERT IGNORE INTO tb_tipo_usuario (idTipoUsuario, nomeTipoUsuario)
+INSERT IGNORE INTO tb_tipo_usuario (id_tipo_usuario, nome_tipo_usuario) VALUES
 (1, 'Admin'),
 (2, 'Cliente'),
 (3, 'Vendedor'),

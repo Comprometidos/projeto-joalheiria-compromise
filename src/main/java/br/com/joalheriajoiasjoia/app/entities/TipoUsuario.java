@@ -29,7 +29,7 @@ public class TipoUsuario {
     public String getNomeTipoUsuario() { 
     	return nomeTipoUsuario; 
     }
-    public void setNomeTipoUsuario(String NomeTipoUsuario) { 
-    	this.nomeTipoUsuario = NomeTipoUsuario; 
+    public void setNomeTipoUsuario(String nomeTipoUsuario) { 
+    	this.nomeTipoUsuario = nomeTipoUsuario; 
     }
 }
