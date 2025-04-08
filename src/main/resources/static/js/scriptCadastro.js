@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
 	const form = document.getElementById("cadastroClienteForm");
 
 	form.addEventListener("submit", async (event) => {
@@ -21,24 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
 					cpf,
 					email,
 					telefone,
-					dataNascimento,
-					senha,
-					tipoUsuario: {
-						id: 2
-					}
+					dataNascimento
 				}),
 			});
 
-			if (response.ok) { // Verifica se a resposta é bem-sucedida
-				setTimeout(() => {
-					window.location.href = "endereco.html";
-				}, 1000);
+			if (!response.ok) {
+				throw new Error ("Erro ao cadastrar o cliente");
+				window.location.href = "endereco.html";
 			} else {
-				alert("Erro ao cadastrar o cliente"); // Exibe alerta de erro se a resposta não for bem-sucedida
+				alert("Erro ao cadastrar o cliente");
 			}
 		} catch (error) {
 			console.error("Erro ao cadastrar o cliente", error);
-			alert("Ocorreu um erro ao tentar cadastrar o cliente. Tente novamente.");
 		}
+
 	});
+
 });

@@ -46,7 +46,11 @@ body {
   padding: 10px;
 }
 
-.card__title {
+.produto-nome{
+	color: black;
+}
+
+.produto-preco {
   font-size: 1.2em;
   color: #f4c542;
 }
