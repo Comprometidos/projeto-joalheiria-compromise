@@ -39,7 +39,7 @@ public class ProdutoService {
             produto.setNomeProduto(produtoDetails.getNomeProduto());
             produto.setCategoria(produtoDetails.getCategoria());
             produto.setTipo(produtoDetails.getTipo());
-            produto.setPedras(produtoDetails.getPedras());
+            produto.setOrnamentos(produtoDetails.getOrnamentos());
             return produtoRepository.save(produto);
         }
         return null;
