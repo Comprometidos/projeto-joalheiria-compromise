@@ -13,6 +13,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+
 @Entity
 @Table(name = "tb_produto")
 public class Produto {
@@ -32,25 +33,31 @@ public class Produto {
     @ManyToOne
     @JoinColumn(name = "idTipoProduto", nullable = false)
     private TipoProduto tipo;
+    
+    @ManyToOne
+    @JoinColumn(name = "descricao_tipo_produto", nullable = false)
+    private TipoProduto descricao;
 
-    @ManyToMany
-    @JoinTable(
-        name = "tb_produto_ornamento",
-        joinColumns = @JoinColumn(name = "idProduto"),
-        inverseJoinColumns = @JoinColumn(name = "idOrnamentos")
-    )
-    private Set<Ornamentos> pedras; // Este é o campo referenciado no mappedBy
+    @ManyToOne
+    @JoinColumn(name = "id_preco", nullable = false)
+    private Produto preco;
+
+    @ManyToOne
+    @JoinColumn(name = "id_ornamentos", nullable = false)
+    private Ornamentos ornamentos;
 
     // Construtores
     public Produto() {
     }
 
-    public Produto(Long idProduto, String nomeProduto, CategoriaProduto categoria, TipoProduto tipo,  Set<Ornamentos> pedras) {
+    public Produto(Long idProduto, String nomeProduto, CategoriaProduto categoria, TipoProduto tipo, TipoProduto descricao, Produto preco, Ornamentos ornamentos) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.categoria = categoria;
         this.tipo = tipo;
-        this.pedras = pedras;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.ornamentos = ornamentos;
     }
 
     // Getters e Setters
@@ -86,11 +93,27 @@ public class Produto {
         this.tipo = tipo;
     }
 
-    public Set<Ornamentos> getPedras() {
-        return pedras;
+    public TipoProduto getDescricao() {
+        return descricao;
     }
 
-    public void setPedras(Set<Ornamentos> pedras) {
-        this.pedras = pedras;
+    public void setDescricao(TipoProduto descricao) {
+        this.descricao = descricao;
+    }
+
+    public Produto getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Produto preco) {
+        this.preco = preco;
+    }
+
+    public Ornamentos getOrnamentos() {
+        return ornamentos;
+    }
+
+    public void setOrnamentos(Ornamentos ornamentos) {
+        this.ornamentos = ornamentos;
     }
 }

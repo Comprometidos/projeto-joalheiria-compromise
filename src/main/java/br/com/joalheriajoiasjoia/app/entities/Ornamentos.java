@@ -21,7 +21,7 @@ public class Ornamentos {
     @Column(name = "nomeOrnamentos", nullable = false, length = 100)
     private String nomeOrnamento;
 
-    @ManyToMany(mappedBy = "pedras") // Corrigido para "pedras"
+    @ManyToMany(mappedBy = "ornamentos") // Corrigido para "pedras"
     private Set<Produto> produtos;
 
     // Construtores

@@ -1,54 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/produto.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Produto</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/produto.css">
 </head>
+
 <body>
-    <div class="product-container">
-        <div class="product-image-container">
-            <img id="produto-img" src="" alt="">
-        </div>
-        <div class="product-info">
-            <h2 id="produto-nome"></h2>
-            <p id="produto-descricao"></p>
-            <p id="produto-preco"></p>
-            <button class="btn-comprar">Comprar Agora</button>
-            
-            <div class="product-details">
-                <h3 class="details-title">Detalhes do Produto</h3>
-                <div class="specs">
-                    <p><span class="highlight">Material:</span> Prata 925 (prata pura com 92,5% de pureza)</p>
-                    <p><span class="highlight">Pedras:</span> 1 Rodolita central (6mm) + 6 Topázios azuis (2mm cada)</p>
-                    <p><span class="highlight">Garantia:</span> 1 ano contra defeitos de fabricação</p>
-                    <p><span class="highlight">Origem:</span> Fabricado no Brasil</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-        function toggleTab() {
-            const tab = document.getElementById('measuresTab');
-            const header = document.querySelector('.tab-header');
-            
-            if (tab.style.display === 'block') {
-                tab.style.display = 'none';
-                header.classList.remove('active');
-            } else {
-                tab.style.display = 'block';
-                header.classList.add('active');
-            }
-        }
-        
-        // Mostrar a tabela de medidas ao carregar a página
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('measuresTab').style.display = 'block';
-            document.querySelector('.tab-header').classList.add('active');
-        });
-    </script>
+	<div class="product-container">
+		<div class="product-image-container">
+			<img id="produto-img" src="" alt="">
+		</div>
+		<div class="product-info">
+			<h2 id="produto-nome"></h2>
+			<p id="produto-descricao"></p>
+			<p id="produto-preco"></p>
+			<button class="btn-comprar">Comprar Agora</button>
+		</div>
+
+	</div>
+
+	<script>
+		function toggleTab() {
+			const tab = document.getElementById('measuresTab');
+			const header = document.querySelector('.tab-header');
+
+			if (tab.style.display === 'block') {
+				tab.style.display = 'none';
+				header.classList.remove('active');
+			} else {
+				tab.style.display = 'block';
+				header.classList.add('active');
+			}
+		}
+
+		// Mostrar a tabela de medidas ao carregar a página
+		document.addEventListener('DOMContentLoaded', function () {
+			document.getElementById('measuresTab').style.display = 'block';
+			document.querySelector('.tab-header').classList.add('active');
+		});
+	</script>
 </body>
+
 </html>
