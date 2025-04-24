@@ -1,94 +1,66 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const formProduto = document.getElementById('formProduto');
-    const listaProdutos = document.getElementById('listaProdutos');
+    carregarProdutos();
     
-    // Carrega produtos do localStorage ou inicia array vazio
-    let produtos = JSON.parse(localStorage.getItem('produtos')) || [];
-
-    // Exibe os produtos na lista
-    function exibirProdutos() {
-        listaProdutos.innerHTML = '';
-        
-        produtos.forEach(produto => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <strong>${produto.nome}</strong> - ${produto.ornamento}
-                <br>Categoria: ${this.getCategoriaTexto(produto.categoria)} | Tipo: ${this.getTipoTexto(produto.tipo)}
-                <button onclick="editarProduto(${produto.id})">Editar</button>
-                <button onclick="excluirProduto(${produto.id})">Excluir</button>
-            `;
-            listaProdutos.appendChild(li);
-        });
-    }
-
-    // Retorna o texto da categoria
-    function getCategoriaTexto(valor) {
-        const categorias = {
-            '1': 'Anéis',
-            '2': 'Colares',
-            '3': 'Brincos',
-            '4': 'Pulseiras',
-            '5': 'Relógios'
-        };
-        return categorias[valor] || valor;
-    }
-
-    // Retorna o texto do tipo
-    function getTipoTexto(valor) {
-        const tipos = {
-            '1': 'Ouro',
-            '2': 'Prata',
-            '3': 'Bijuteria'
-        };
-        return tipos[valor] || valor;
-    }
-
-    // Adiciona novo produto
+    const formProduto = document.getElementById('formProduto');
     formProduto.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const novoProduto = {
-            id: produtos.length > 0 ? Math.max(...produtos.map(p => p.id)) + 1 : 1,
-            nome: document.getElementById('idProduto').value,
-            ornamento: document.getElementById('idOrnamentos').value,
-            categoria: document.getElementById('idCategoria').value,
-            tipo: document.getElementById('idTipoProduto').value
+        const produto = {
+            nomeProduto: document.getElementById('nomeProduto').value,
+            ornamentos: document.getElementById('ornamentos').value,
+            categoria: document.getElementById('categoria').value,
+            tipo: document.getElementById('tipo').value,
+            preco: parseFloat(document.getElementById('preco').value)
         };
         
-        produtos.push(novoProduto);
-        localStorage.setItem('produtos', JSON.stringify(produtos));
-        exibirProdutos();
-        formProduto.reset();
-        
-        alert('Produto adicionado com sucesso!');
+        fetch('http://localhost:8080/produtos', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(produto)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao salvar produto');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Sucesso:', data);
+            formProduto.reset();
+            carregarProdutos();
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Erro ao salvar produto: ' + error.message);
+        });
     });
-
-    // Função para editar produto
-    window.editarProduto = function(id) {
-        const produto = produtos.find(p => p.id === id);
-        if (produto) {
-            document.getElementById('idProduto').value = produto.nome;
-            document.getElementById('idOrnamentos').value = produto.ornamento;
-            document.getElementById('idCategoria').value = produto.categoria;
-            document.getElementById('idTipoProduto').value = produto.tipo;
-            
-            // Remove o produto da lista
-            produtos = produtos.filter(p => p.id !== id);
-            localStorage.setItem('produtos', JSON.stringify(produtos));
-            exibirProdutos();
-        }
-    };
-
-    // Função para excluir produto
-    window.excluirProduto = function(id) {
-        if (confirm('Tem certeza que deseja excluir este produto?')) {
-            produtos = produtos.filter(p => p.id !== id);
-            localStorage.setItem('produtos', JSON.stringify(produtos));
-            exibirProdutos();
-            alert('Produto excluído com sucesso!');
-        }
-    };
-
-    // Carrega os produtos ao iniciar
-    exibirProdutos();
 });
+
+function carregarProdutos() {
+    fetch('http://localhost:8080/produtos')
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Erro ao carregar produtos');
+            }
+            return res.json();
+        })
+        .then(produtos => {
+            const tabela = document.getElementById('tabelaProdutos').querySelector('tbody');
+            tabela.innerHTML = '';
+            
+            produtos.forEach(p => {
+                const linha = tabela.insertRow();
+                linha.insertCell(0).textContent = p.nomeProduto;
+                linha.insertCell(1).textContent = p.ornamentos;
+                linha.insertCell(2).textContent = p.categoria;
+                linha.insertCell(3).textContent = p.tipo;
+                linha.insertCell(4).textContent = p.preco.toFixed(2);
+            });
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Erro ao carregar produtos: ' + error.message);
+        });
+}

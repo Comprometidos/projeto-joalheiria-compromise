@@ -1,4 +1,3 @@
-
 package br.com.joalheriajoiasjoia.app.entities;
 
 import jakarta.persistence.Column;

@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("produto-img").src = produto.imgUrl;
                 document.getElementById("produto-img").alt = produto.nomeProduto;
 
-                document.getElementById("produto-nome").textContent = produto.nomeProduto;
+                document.getElementById("produto-nome").textContent = produto.produto-nome;
                
-                document.getElementById("produto-descricao").textContent = produto.descricao;
+                document.getElementById("produto-descricao").textContent = produto.produto-descricao;
                
                 document.getElementById("produto-preco").textContent = `R$ ${produto.preco.toFixed(2)}`;
             })
