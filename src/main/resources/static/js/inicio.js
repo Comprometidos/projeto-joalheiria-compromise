@@ -1,16 +1,23 @@
 let currentIndex = 0;
 
+document.getElementById('btnNext').addEventListener('click', () => {
+  moveCarousel(1);
+});
+
+document.getElementById('btnPrev').addEventListener('click', () => {
+  moveCarousel(-1);
+});
+
 function moveCarousel(direction) {
-  const container = document.querySelector('.card__container');
-  const cards = document.querySelectorAll('.card__article');
-  const cardWidth = cards[0].offsetWidth + 20; // 340px + margem
-  const maxIndex = cards.length - Math.floor(container.parentElement.offsetWidth / cardWidth);
+  const track = document.getElementById('carouselTrack');
+  const cards = track.querySelectorAll('.card');
+  const cardWidth = cards[0].offsetWidth + 20;
+  const visibleCards = Math.floor(track.parentElement.offsetWidth / cardWidth);
+  const maxIndex = cards.length - visibleCards;
 
   currentIndex += direction;
+  currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
 
-  if (currentIndex < 0) currentIndex = 0;
-  if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-  const offset = -currentIndex * cardWidth;
-  container.style.transform = `translateX(${offset}px)`;
+  const translateX = -currentIndex * cardWidth;
+  track.style.transform = `translateX(${translateX}px)`;
 }
