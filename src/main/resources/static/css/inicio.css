@@ -175,8 +175,13 @@ nav {
 
 .botao-linkedin{
     background-color: rgb(80, 137, 235);
-    
+}
 
+.anelnovo{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  
 }
 
 footer {

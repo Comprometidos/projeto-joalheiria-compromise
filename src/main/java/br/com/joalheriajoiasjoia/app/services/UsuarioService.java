@@ -13,20 +13,39 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository repository;
 
-    public List<Usuario> listarUsuarios() {
-        return repository.findAll();
-    }
-
+    //Criar uma nova pessoa
     public Usuario salvarUsuario(Usuario usuario) {
         return repository.save(usuario);
     }
-
-    public Usuario atualizarUsuario(Long id, Usuario usuario) {
-        usuario.setIdUsuario(id);
-        return repository.save(usuario);
+    
+    //Buscar todas pessoa por ID
+  	public Usuario buscarPorId(Long id) {
+  		return repository.findById(id).orElse(null);
+  	}
+  	
+    //Listar todas as pessoas
+    public List<Usuario> listarUsuarios() {
+        return repository.findAll();
     }
-
+    
+	//Deletar uma pessoa pelo ID
     public void deletarUsuario(Long id) {
         repository.deleteById(id);
     }
+  //Verificar email e senha
+  	public Usuario autenticarUsuario(String email, String senha) {
+  		
+  		//Verificar existência do email
+  		Usuario usuario = repository.findByEmail(email);
+  		
+  		if (usuario != null && usuario.getSenha().equals(senha)) {
+  			return usuario;
+  		} else {
+  			return null;
+  		}
+  	}
+
+  	public Usuario findByEmail(String email) {
+  		return null;
+  	}
 }
