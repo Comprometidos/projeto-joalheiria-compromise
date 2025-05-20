@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.joalheriajoiasjoia.app.entities.Usuario;
@@ -20,11 +21,11 @@ public class UsuarioController {
 	
     @Autowired
     private UsuarioService service;
-
-    // Criar uma nova pessoa
-    @PostMapping
-    public Usuario criar(@RequestBody Usuario usuario) {
-        return service.salvarUsuario(usuario);
+    
+    //Listar todas as pessoas
+    @GetMapping
+    public List<Usuario> listarTodas() {
+        return service.listarUsuarios();
     }
     
     // Buscar uma pessoa pelo ID
@@ -33,33 +34,41 @@ public class UsuarioController {
     	return service.buscarPorId(id);
     }
     
-    // Excluir uma pessoa
+    // Criar uma nova pessoa
+    @PostMapping
+    public Usuario criar(@RequestBody Usuario usuario) {
+        return service.salvarUsuario(usuario);
+    }
+    
+    // Deletar uma pessoa
     @DeleteMapping("/{id}")
     public void excluir(@PathVariable Long id) {
         service.deletarUsuario(id);
     }
- // Listar todas as pessoas
-    @GetMapping
-    public List<Usuario> listarTodas() {
-        return service.listarUsuarios();
-    }
-
-    // Buscar pessoa por email
-    @GetMapping("/email/{email}")
-    public Usuario buscarPorEmail(@PathVariable String email) {
-        return service.findByEmail(email);
-    }
+    
+	//Buscar por nome de usuario 
+	@GetMapping("/buscarpornomeusuario")
+	public Usuario getByUsuario (@RequestParam String nomeUsuario) {
+		return service.findByUsuario(nomeUsuario);
+	}
 
     //Metodo de login
     @PostMapping("/login")
     public Usuario login(@RequestBody Usuario loginRequest) {
     	
-    	//Chama o serviço para verificar as credenciais
+		//Chama o metodo de autenticação do service passando o email e senha fornecido no login
+		//1. loginRequest.getEmail()- obtem o email enviado pelo usuario da requisição 
+		//2. loginRequest.getSenha() - Obtem a senha enviada pelo usuario na requisição
+		//3. UsuarioService.autenticarPessoa(Email, senha) -  verifica no banco se existe um usuario com este email e se a senha é valida 
+		//4. Retorna o objeto usuarioautenticado, ou null caso falhe na autenticação 
     	Usuario usuario = service.autenticarUsuario(loginRequest.getEmail(), loginRequest.getSenha());
     	
+		//Verifica se o serviço retornou um usuario válido (autenticação bem-sucedida)
     	if (usuario != null) {
+    		//Se autenticado, retorna os dados do usuario
     		return usuario;
     	} else {
+			//Se não atenticado, retorna null indicando falha no login
     		return null;
     	}
     	
