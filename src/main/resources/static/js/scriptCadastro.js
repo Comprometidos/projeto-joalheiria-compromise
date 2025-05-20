@@ -24,11 +24,14 @@ document.getElementById('cadastroClienteForm').addEventListener('submit', functi
         if (!response.ok) {
             throw new Error('Erro no cadastro');
         }
-        return response.json();
+        return response.json(); // <- Aqui você pega o objeto com o id
     })
     .then(data => {
+        const idUsuario = data.idUsuario; // Pegando o ID retornado pelo backend
         alert('Cadastro realizado com sucesso!');
-        window.location.href = 'endereco.html';
+
+        // Redirecionando e passando o ID do usuário na URL
+        window.location.href = `endereco.html?idUsuario=${idUsuario}`;
     })
     .catch(error => {
         console.error('Erro:', error);

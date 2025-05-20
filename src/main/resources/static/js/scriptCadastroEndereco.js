@@ -25,6 +25,56 @@ document.getElementById("cep").addEventListener("input", async function (){
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const idUsuario = urlParams.get("idUsuario");
+    
+        const form = document.getElementById("cadastroEnderecoForm");
+    
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+    
+            const cep = document.getElementById("cep").value;
+            const rua = document.getElementById("rua").value;
+            const bairro = document.getElementById("bairro").value;
+            const numero = document.getElementById("numero").value;
+            const cidade = document.getElementById("cidade").value;
+            const estado = document.getElementById("estado").value;
+            const complemento = document.getElementById("complemento").value;
+    
+            try {
+                const response = await fetch("http://localhost:8080/cadastroendereco", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        cep,
+                        rua,
+                        bairro,
+                        numero,
+                        cidade,
+                        estado,
+                        complemento,
+                        usuario: {
+                            idUsuario: parseInt(idUsuario) // Aqui está o vínculo com o usuário
+                        }
+                    }),
+                });
+    
+                if (!response.ok) {
+                    throw new Error ("Erro ao cadastrar o endereço do cliente");
+                } else {
+                    alert("Endereço cadastrado com sucesso!");
+                    window.location.href = 'sucessocadastro.html';
+                }
+            } catch (error) {
+                console.error("Erro ao cadastrar o endereço do cliente", error);
+                alert("Erro ao cadastrar endereço: " + error.message);
+            }
+        });
+    });
+    
     const form = document.getElementById("cadastroEnderecoForm");
 
     form.addEventListener("submit", async (event) => {
