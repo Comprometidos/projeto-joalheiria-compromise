@@ -4,14 +4,14 @@
 body {
 
   background-color: rgb(11, 10, 10);
-  color: white;
+  color: rgb(252, 218, 218);
   font-family: Arial, sans-serif;
 
 }
 
 header {
     
-    font-style:italic !important;
+    font-style:italic;
     background-color:#050505;
     color: #020202fc;
     padding: 20px;
@@ -27,12 +27,6 @@ header {
     position: relative; /* Necessário para o texto ser posicionado em cima do vídeo */
     width: 100%; /* Largura completa da seção */
     height: 100vh; /* Altura da seção, pode ajustar conforme necessário */
-  }
-  
-  #logo video {
-    width: 100%; /* Faz o vídeo ocupar toda a largura da seção */
-    height: 100%; /* Faz o vídeo ocupar toda a altura da seção */
-    object-fit: cover; /* Garante que o vídeo cubra toda a área do contêiner */
   }
   
   .texto-overlay {
@@ -94,7 +88,7 @@ nav {
 
 .banner {
 
-    background-color:#000000;
+    background-color:rgb(216, 194, 141);
     justify-content:flex-end;
     align-items:self-start;
     text-align:end; 
@@ -289,23 +283,49 @@ footer {
     overflow: hidden;
   }
 
-  .novidade video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: 1;
-  }
-  .luxury-section {
-    background: linear-gradient(to bottom, #fefefe, #f5f5f5);
-    padding: 60px 20px;
+.novidade-luxury-container {
+  display: flex;
+  align-items: center;   /* alinha verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 2rem;              /* espaço entre vídeo e texto */
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #fefefe, #f5f5f5);
+  font-family: 'Playfair Display', serif;
+  color: #333;
+}
+
+/* Remover o position absolute do vídeo e ajustar tamanho */
+.video-wrapper video {
+  position: relative;    /* padrão */
+  width: 400px;          /* largura fixa */
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.luxury-section {
+  max-width: 600px;
+  text-align: left; /* deixa o texto alinhado à esquerda */
+}
+
+/* Se quiser garantir responsividade */
+@media (max-width: 900px) {
+  .novidade-luxury-container {
+    flex-direction: column;
     text-align: center;
-    font-family: 'Playfair Display', serif;
-    color: #333;
   }
+
+  .video-wrapper video {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .luxury-section {
+    max-width: 100%;
+  }
+}
+
 
   .luxury-title {
     font-size: 2.5rem;
@@ -361,5 +381,4 @@ footer {
       max-width: 90%;
     }
   }
-
 
