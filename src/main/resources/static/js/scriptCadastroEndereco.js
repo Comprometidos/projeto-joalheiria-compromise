@@ -59,14 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     cidade,
                     estado,
                     complemento,
-                    usuario: {
-                        idUsuario: id
+                    usuarios: {
+                        idUsuario: idUsuario
                     }
                 }),
             });
 
             if (!response.ok) {
-                throw new Error("Erro ao cadastrar o endereço do cliente");
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.message || "Erro ao cadastrar o endereço do cliente");
             } else {
                 alert("Endereço cadastrado com sucesso!");
                 window.location.href = 'sucessocadastro.html';

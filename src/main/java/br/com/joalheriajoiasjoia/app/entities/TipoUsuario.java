@@ -1,7 +1,5 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,7 +15,6 @@ public class TipoUsuario {
     @Column(name = "idTipoUsuario", nullable = false)
     private Long idTipoUsuario;
     
-    @JsonManagedReference
     @Column(name = "nomeTipoUsuario", nullable = false, length = 50)
     private String nomeTipoUsuario;
 

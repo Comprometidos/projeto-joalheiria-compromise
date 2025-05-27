@@ -1,6 +1,6 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -43,8 +43,8 @@ public class Endereco {
 		private String complemento;
 		
 		@ManyToOne
-		@JsonBackReference
-		@JoinColumn(name = "CLIENTE_id_cliente")
+		@JsonIgnoreProperties
+		@JoinColumn(name = "id_usuario")
 		private Usuario usuario;
 
 //Construtores

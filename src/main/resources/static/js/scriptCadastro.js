@@ -1,40 +1,59 @@
-document.getElementById('cadastroClienteForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('cadastroClienteForm');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
     
-    const usuario = {
-        nomeUsuario: document.getElementById('nomeUsuario').value,
-        cpf: document.getElementById('cpf').value,
-        email: document.getElementById('email').value,
-        telefone: document.getElementById('telefone').value,
-        dataNascimento: document.getElementById('dt_nascimento').value,
-        senha: document.getElementById('senha').value,
-        tipoUsuario: {
-            idTipoUsuario: parseInt(document.getElementById('idTipoUsuario').value)
-        }
-    };
-
-    fetch('http://localhost:8080/usuarios', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(usuario)
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Erro no cadastro');
-        }
-        return response.json(); // <- Aqui você pega o objeto com o id
-    })
-    .then(data => {
-        const idUsuario = data.idUsuario; // Pegando o ID retornado pelo backend
-        alert('Cadastro realizado com sucesso!');
-
-        // Redirecionando e passando o ID do usuário na URL
-        window.location.href = `endereco.html?idUsuario=${idUsuario}`;
-    })
-    .catch(error => {
-        console.error('Erro:', error);
-        alert('Erro ao cadastrar: ' + error.message);
+        const nomeUsuario = document.getElementById('nomeUsuario').value;
+        const cpf = document.getElementById('cpf').value;
+        const email = document.getElementById('email').value;
+        const telefone = document.getElementById('telefone').value;
+        const dataNascimento = document.getElementById('dt_nascimento').value;
+        const senha = document.getElementById('senha').value;
+        const idTipoUsuario = 1; 
+        
+        fetch('http://localhost:8080/usuarios', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({
+                nomeUsuario,
+                cpf,
+                email,
+                telefone,
+                dataNascimento,
+                senha,
+                tipoUsuario: {
+                    idTipoUsuario: idTipoUsuario 
+                }
+            })
+        })
+        .then(async response => {
+            if (!response.ok) {
+                const text = await response.text();
+                try {
+                    const data = text ? JSON.parse(text) : {};
+                    throw new Error(data.message || `Erro ${response.status}: ${response.statusText}`);
+                } catch {
+                    throw new Error(`Erro ${response.status}: ${response.statusText}`);
+                }
+            }
+            
+            const contentLength = response.headers.get('Content-Length');
+            if (contentLength === '0' || !contentLength) {
+                return { nomeUsuario, email, senha };
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert('Usuário cadastrado com sucesso!\nNome: ' + data.nomeUsuario);
+            window.location.href = 'loginCliente.html';
+        })
+        .catch(error => { 
+            console.error('Erro no cadastro:', error);
+            alert('Falha no cadastro: ' + error.message);
+        });
     });
 });

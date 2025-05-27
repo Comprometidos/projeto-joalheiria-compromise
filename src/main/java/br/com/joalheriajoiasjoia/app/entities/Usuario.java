@@ -2,7 +2,7 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.time.LocalDate;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -40,7 +40,7 @@ public class Usuario {
 	private String senha;
 	
 	@ManyToOne
-	@JsonManagedReference
+	@JsonIgnoreProperties
     @JoinColumn(name = "idTipoUsuario", nullable = false)
     private TipoUsuario tipoUsuario;
 
