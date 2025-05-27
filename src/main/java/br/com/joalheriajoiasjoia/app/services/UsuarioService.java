@@ -17,6 +17,11 @@ public class UsuarioService {
         return repository.save(usuario);
     }
     
+    //Buscar por nome do usuario
+    public Usuario buscarPorNomeUsuario(Usuario usuario) {
+    	return repository.findByNomeUsuario(usuario);
+    }
+    
     //Buscar todas pessoa por ID
   	public Usuario buscarPorId(Long id) {
   		return repository.findById(id).get();
@@ -32,8 +37,8 @@ public class UsuarioService {
         repository.deleteById(id);
     }
     
-  	public Usuario findByUsuario(String nomeUsuario) {
-  		return repository.findByNomeUsuario(nomeUsuario);
+  	public Usuario findByUsuario(String email) {
+  		return repository.findByEmail(email);
   	}
     
   	//Verificar email e senha

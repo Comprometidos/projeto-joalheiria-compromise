@@ -2,6 +2,8 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,6 +40,7 @@ public class Usuario {
 	private String senha;
 	
 	@ManyToOne
+	@JsonManagedReference
     @JoinColumn(name = "idTipoUsuario", nullable = false)
     private TipoUsuario tipoUsuario;
 
