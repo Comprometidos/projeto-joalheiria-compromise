@@ -1,18 +1,13 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import java.util.Set;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-
 
 @Entity
 @Table(name = "tb_produto")
@@ -20,42 +15,37 @@ public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idProduto", nullable = false)
+    @Column(name = "id_produto", nullable = false)
     private Long idProduto;
 
-    @Column(name = "nomeProduto", nullable = false, length = 100)
+    @Column(name = "nome_produto", nullable = false, length = 100)
     private String nomeProduto;
 
-    @ManyToOne
-    @JoinColumn(name = "idCategoria", nullable = false)
-    private CategoriaProduto categoria;
-
-    @ManyToOne
-    @JoinColumn(name = "idTipoProduto", nullable = false)
-    private TipoProduto tipo;
+    @Column(name = "ornamentos", nullable = false)
+    private String ornamentos;
     
-    @ManyToOne
-    @JoinColumn(name = "descricao_tipo_produto", nullable = false)
-    private TipoProduto descricao;
+    @Column(name = "categoria", nullable = false)
+    private String categoria;
+
+    @Column(name = "tipo_produto", nullable = false)
+    private String tipo;
+
+    @Column(name = "preco", nullable = false)
+    private double preco;
 
     @ManyToOne
-    @JoinColumn(name = "id_preco", nullable = false)
-    private Produto preco;
-
-    @ManyToOne
-    @JoinColumn(name = "id_ornamentos", nullable = false)
-    private Ornamentos ornamentos;
-
+    @JoinColumn(name = "usuario_id")
+	private Usuario usuario;
+    
     // Construtores
     public Produto() {
     }
 
-    public Produto(Long idProduto, String nomeProduto, CategoriaProduto categoria, TipoProduto tipo, TipoProduto descricao, Produto preco, Ornamentos ornamentos) {
+    public Produto(Long idProduto, String nomeProduto, String categoria, String tipo, String descricao, double preco, String ornamentos) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.categoria = categoria;
         this.tipo = tipo;
-        this.descricao = descricao;
         this.preco = preco;
         this.ornamentos = ornamentos;
     }
@@ -77,43 +67,35 @@ public class Produto {
         this.nomeProduto = nomeProduto;
     }
 
-    public CategoriaProduto getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(CategoriaProduto categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
-    public TipoProduto getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoProduto tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
-    public TipoProduto getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(TipoProduto descricao) {
-        this.descricao = descricao;
-    }
-
-    public Produto getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(Produto preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
 
-    public Ornamentos getOrnamentos() {
+    public String getOrnamentos() {
         return ornamentos;
     }
 
-    public void setOrnamentos(Ornamentos ornamentos) {
+    public void setOrnamentos(String ornamentos) {
         this.ornamentos = ornamentos;
     }
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import br.com.joalheriajoiasjoia.app.entities.Usuario;
 import br.com.joalheriajoiasjoia.app.repositories.UsuarioRepository;
 
@@ -13,20 +12,49 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository repository;
 
-    public List<Usuario> listarUsuarios() {
-        return repository.findAll();
-    }
-
+    //Criar uma nova pessoa
     public Usuario salvarUsuario(Usuario usuario) {
         return repository.save(usuario);
     }
-
-    public Usuario atualizarUsuario(Long id, Usuario usuario) {
-        usuario.setIdUsuario(id);
-        return repository.save(usuario);
+    
+    //Buscar por nome do usuario
+    public Usuario buscarPorNomeUsuario(Usuario usuario) {
+    	return repository.findByNomeUsuario(usuario);
     }
-
+    
+    //Buscar todas pessoa por ID
+  	public Usuario buscarPorId(Long id) {
+  		return repository.findById(id).get();
+  	}
+  	
+    //Listar todas as pessoas
+    public List<Usuario> listarUsuarios() {
+        return repository.findAll();
+    }
+    
+	//Deletar uma pessoa pelo ID
     public void deletarUsuario(Long id) {
         repository.deleteById(id);
     }
+    
+  	public Usuario findByUsuario(String email) {
+  		return repository.findByEmail(email);
+  	}
+    
+  	//Verificar email e senha
+  	public Usuario autenticarUsuario(String email, String senha) {
+  		
+		//Buscar no Banco de Dados um Usuario que tenha o email informado
+  		Usuario usuario = repository.findByEmail(email);
+  		
+		//Verifica se o usuario foi encontrado e se a senha confere com a senha do usuario
+  		if (usuario != null && usuario.getSenha().equals(senha)) {
+  			//Se email e senha estiverem corretos, retorna o objetoUsuario autenticado
+  			return usuario;
+  		} else {
+			//Se o usuário não existir ou a senha não estiver correta, retorna null(falha na autenticação)
+  			return null;
+  		}
+  		
+  	}
 }

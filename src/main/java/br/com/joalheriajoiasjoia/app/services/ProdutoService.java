@@ -21,7 +21,7 @@ public class ProdutoService {
     }
 
     // Retorna um produto pelo ID
-    public Produto getProdutoById(Long id) {
+    public Produto buscarPorId(Long id) {
         Optional<Produto> produto = produtoRepository.findById(id);
         return produto.orElse(null);
     }

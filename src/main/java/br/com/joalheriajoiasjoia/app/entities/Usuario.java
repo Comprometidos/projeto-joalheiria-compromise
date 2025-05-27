@@ -2,6 +2,8 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,19 +40,21 @@ public class Usuario {
 	private String senha;
 	
 	@ManyToOne
+	@JsonManagedReference
     @JoinColumn(name = "idTipoUsuario", nullable = false)
     private TipoUsuario tipoUsuario;
 
     // Construtores
     public Usuario() {}
     
-    public Usuario(Long idUsuario, String nomeUsuario, String cpf, String email, String telefone, LocalDate dataNascimento, TipoUsuario tipoUsuario) {
+    public Usuario(Long idUsuario, String nomeUsuario, String cpf, String email, String telefone, LocalDate dataNascimento, String senha, TipoUsuario tipoUsuario) {
         this.idUsuario = idUsuario;
         this.nomeUsuario = nomeUsuario;
         this.cpf = cpf;
         this.email = email;
         this.telefone = telefone;
         this.dataNascimento = dataNascimento;
+        this.senha = senha;
         this.tipoUsuario = tipoUsuario;
     }
 
@@ -101,6 +105,14 @@ public class Usuario {
 
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+	
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public TipoUsuario getTipoUsuario() {

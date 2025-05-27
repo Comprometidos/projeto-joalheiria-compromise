@@ -1,13 +1,10 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import java.util.Set;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,9 +22,6 @@ public class TipoProduto {
     @Column(name = "descricao_tipo_produto", nullable = false)
     private String descricaoProduto;
     
-    @OneToMany(mappedBy = "tipo")
-    private Set<Produto> produtos;
-
     // Construtores
     public TipoProduto() {
     }
@@ -61,13 +55,5 @@ public class TipoProduto {
     
     public void setDescricaoProduto(String descricaoProduto) {
     	this.descricaoProduto = descricaoProduto;
-    }
-
-    public Set<Produto> getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(Set<Produto> produtos) {
-        this.produtos = produtos;
     }
 }
