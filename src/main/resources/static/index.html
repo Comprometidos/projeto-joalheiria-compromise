@@ -52,7 +52,6 @@
     </section>
 
     <section id="banner" class="banner">
-        <h2>"A verdadeira joia não brilha apenas no olhar, mas no coração que a escolhe."</h2>
         <p>Peças únicas para momentos inesquecíveis. </p>
     </section>
   
@@ -296,20 +295,6 @@
       </div>
     </article>
 
-    <!-- Produto 9 -->
-    <article class="card__article">
-      <img src=" img/Colar-Life-Forms-Coracao-em-Prata-925-com-Banho-de-Ouro-Amarelo-18k-e-Pedras-Incolores-45cm-100079_1_set.webp" alt="Brinco de Ouro Amarelo com Diamantes" class="card__img" />
-      <div class="card__data">
-        <span class="card__description">Colar de Ouro Amarelo com Diamantes</span>
-        <h2 class="card__title">R$989.000</h2>
-        <div class="preco-promocional">
-          <span class="preco-antigo">De R$ 1.120.000</span>
-          <span class="preco-novo">Por R$ 989.000</span>
-          <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
-        </div>
-        <a href="#" class="card__button">Sobre</a>
-      </div>
-    </article>
 
     <!-- Produto 10 -->
     <article class="card__article">
@@ -405,8 +390,124 @@
 
 </body>
 
-<section class="catalog-container">
-    <h1>Lançamentos</h1>
+ <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .catalog-container-2 {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+      gap: 24px;
+      justify-content: center;
+    }
+    .card__article {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card__article:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgb(0 0 0 / 0.15);
+    }
+    .card__img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+    }
+    .card__data {
+      padding: 16px 20px 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .nomeProduto, .card__description {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #111;
+      min-height: 48px;
+    }
+    .card__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #009688;
+      margin-bottom: 10px;
+    }
+    .preco-promocional {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .preco-antigo {
+      text-decoration: line-through;
+      color: #999;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .preco-novo, .produto-preco {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #d32f2f;
+    }
+    .cart-icon {
+      width: 22px;
+      height: 22px;
+      filter: invert(30%) sepia(70%) saturate(300%) hue-rotate(120deg);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .cart-icon:hover {
+      transform: scale(1.2);
+    }
+    .card__button {
+      text-align: center;
+      background-color: #009688;
+      color: white;
+      font-weight: 600;
+      padding: 10px 0;
+      border-radius: 6px;
+      text-decoration: none;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      margin-top: auto;
+      display: block;
+    }
+    .card__button:hover {
+      background-color: #00796b;
+    }
+    @media (max-width: 480px) {
+      .catalog-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+<section>
+    <h1>Lançamentos</h1></section>
+
+<section class="catalog-container-2">
+ 
     
     <!-- Produto 18 -->
     <article class="card__article">
@@ -484,394 +585,22 @@
       </style>
       
       <section class="relogio">
-        <h2>Relógio Compromise</h2>
+        <h2 style="color: #ffffff;">Em Breve</h2>
         <div class="relogio-container">
-          <div class="Relogio1">
-            <img src="img/relogio-atlas-2-ponteiros-24-mm-em-aco-inoxidavel-com-diamantes-62867469_1.webp" alt="">
-          </div>
-          <div class="Relogio1">
-            <img src="img/Relogio-TAG-Heuer-Carrera-Chronograph-Masculino-CBN2013FC6483-55539_1_set.webp" alt="">
-          </div>
-          <div class="Relogio1">
-            <img src="img/Relogio-Festina-Feminino-Aco-Prateado-105134_1_set.webp" alt="">
-          </div>
+    
+    
           <div class="Relogio1">
             <img src="img/relogio--eternity-28-mm-em-ouro-branco-com-diamantes-73580846_1.webp" alt="">
           </div>
-          <div class="Relogio1">
-            <img src="img/Relogio-TAG-Heuer-Carrera-Chronograph-Masculino-CBN2013FC6483-55539_1_set.webp" alt="">
-          </div>
+        
           <div class="Relogio1">
             <img src="img/relogio-atlas-2-ponteiros-24-mm-em-aco-inoxidavel-com-diamantes-62867469_1.webp" alt="">
           </div>
         </div>
       </section>
       
-
-<<<<<<< HEAD
-=======
-
-    <section>
-<<<<<<< HEAD
-        <img style="display: block; width: 100%; height: auto;" src="img/anelnovo.png" alt="">
-=======
-        <img class="anelnovo" src="img/anelnovo.png" alt="">
->>>>>>> 42c5929f65437b05d10d365839968b3dd2fcd8ad
-    </section>
-    
-    
-
-<<<<<<< HEAD
-    <div class="carousel-container">
-        <div class="card__container">
-
-            <!-- Produto 1 -->
-            <article class="card__article">
-                <img src="img/Anel-Color-em-Prata-925-com-Rodolita-e-Topazios-9262_1_set.webp" alt="image"
-                    class="card__img">
-                <div class="card__data">
-
-                    <span class="card__description">Anel de diamante rosa</span>
-                    <h2 class="card__title">R$155.400</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 199.000</span>
-                        <span class="preco-novo">Por R$ 155.400</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="http://localhost:8080/produtos-" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 2 -->
-            <article class="card__article">
-                <img src="img/Anel-Fiori-em-Ouro-Branco-18k-com-Perola-e-Diamantes-0-29-ct-101844_2_set.webp"
-                    alt="image" class="card__img">
-                <div class="card__data">
-
-                    <span class="card__description">Anel com pérola e ouro branco</span>
-                    <h2 class="card__title">R$1.928.800</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 2.300.000</span>
-                        <span class="preco-novo">Por R$ 1.928.800</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 3 -->
-            <article class="card__article">
-                <img src="img/Anel-Life-em-Prata-925-com-Pedras-343638-1600-1600.png" alt="image" class="card__img">
-                <div class="card__data">
-                    <span class="card__description">Anel de prata com pedras de diamante</span>
-                    <h2 class="card__title">R$1.333.200</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 1.600.000</span>
-                        <span class="preco-novo">Por R$ 1.333.200</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 4 -->
-            <article class="card__article">
-                <img src="img/Anel-Life-Skyline-II-em-Prata-925-com-Pedras-Incolores-103829_1_set.webp" alt="image"
-                    class="card__img">
-                <div class="card__data">
-
-                    <span class="card__description">Anel de prata e pedras de diamantes</span>
-                    <h2 class="card__title">R$196.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 250.000</span>
-                        <span class="preco-novo">Por R$ 196.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 5 -->
-            <article class="card__article">
-                <img src="img/Anel-rose-em-Ouro-347914-1600-1600.png" alt="image" class="card__img">
-                <div class="card__data">
-
-
-                    <span class="card__description">Anel florirose</span>
-                    <h2 class="card__title">R$150.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 189.000</span>
-                        <span class="preco-novo">Por R$ 150.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 6 -->
-            <article class="card__article">
-                <img src="img/Argola-Life-Maxi-II-Prata-Cravejado-69564_1_set.webp" alt="image" class="card__img">
-                <div class="card__data">
-
-                    <span class="card__description">Brinco Cravejado de Diamante</span>
-                    <h2 class="card__title">R$110.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 140.000</span>
-                        <span class="preco-novo">Por R$ 110.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 7 -->
-            <article class="card__article">
-                <img src="img/Argola-Redonda-em-Ouro-Amarelo-18k-15mm-6680_1_set.webp" alt="image" class="card__img">
-                <div class="card__data">
-
-                    <span class="card__description">Brinco Argola de Ouro</span>
-                    <h2 class="card__title">R$230.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 290.000</span>
-                        <span class="preco-novo">Por R$ 230.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 8 -->
-            <article class="card__article">
-                <img src="img/relogio-atlas-2-ponteiros-24-mm-em-aco-inoxidavel-com-diamantes-62867469_1.webp"
-                    alt="image" class="card__img">
-                <div class="card__data">
-
-                    <span class="card__description">Relógio cravejado banhado a ouro branco</span>
-                    <h2 class="card__title">R$190.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 225.000</span>
-                        <span class="preco-novo">Por R$ 190.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-
-
-            <!-- Continuo do produto 9 ao 20 no próximo bloco -->
-
-
-            <!-- Continuação dos outros produtos no mesmo padrão... -->
-            <!-- Produto 9 -->
-            <article class="card__article">
-                <img src="img/Colar-Life-Forms-Coracao-em-Prata-925-com-Banho-de-Ouro-Amarelo-18k-e-Pedras-Incolores-45cm-100079_1_set.webp"
-                    alt="image" class="card__img">
-                <div class="card__data">
-
-                    <span class="card__description">Colar de Ouro</span>
-                    <h2 class="card__title">R$150.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 180.000</span>
-                        <span class="preco-novo">Por R$ 150.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 10 -->
-            <article class="card__article">
-                <img src="img/Pulseira-coraçao-em-Prata-925-190624-1200-1200.png" alt="image" class="card__img">
-                <div class="card__data">
-
-
-                    <span class="card__description">Pulseira de Prata</span>
-                    <h2 class="card__title">R$102.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 130.000</span>
-                        <span class="preco-novo">Por R$ 102.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 11 -->
-            <article class="card__article">
-                <img src="img/Pulseira-Cravejada-rose-eme-Ouro187382-800-800.png" alt="image" class="card__img">
-                <div class="card__data">
-                    <span class="card__description">Pulseira Cravejada Ouro-rose</span>
-                    <h2 class="card__title">R$170.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 210.000</span>
-                        <span class="preco-novo">Por R$ 170.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-                </div>
-            </article>
-
-            <!-- Produto 12 -->
-            <article class="card__article">
-                <img src="img/Pulseira-Life-banhada-em-Ouro-Branco-20k-180033-800-800.png" alt="image"
-                    class="card__img">
-                <div class="card__data">
-
-
-                    <span class="card__description">Pulseira-rose banhada a Ouro</span>
-                    <h2 class="card__title">R$480.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 550.000</span>
-                        <span class="preco-novo">Por R$ 480.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 13 -->
-            <article class="card__article">
-                <img src="img/Pulseira-Life-em-Ouro-308259-800-800.png" alt="image" class="card__img">
-                <div class="card__data">
-
-                    <span class="card__description">Pulseira coração de Ouro</span>
-                    <h2 class="card__title">R$73.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 89.000</span>
-                        <span class="preco-novo">Por R$ 73.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 14 -->
-            <article class="card__article">
-                <img src="img/Pulseira-Life-Petit-Laco-em-Prata-925-90543_1_set.webp" alt="image" class="card__img">
-                <div class="card__data">
-                    <span class="card__description">Colar de Prata</span>
-                    <h2 class="card__title">R$135.600</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 165.000</span>
-                        <span class="preco-novo">Por R$ 135.600</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 15 -->
-            <article class="card__article">
-                <img src="img/Pulseira-Riviera-em-Prata-925-com-Topazios-Incolores-87068_1_set.webp" alt="image"
-                    class="card__img">
-                <div class="card__data">
-                    <span class="card__description">Anel de noivado</span>
-                    <h2 class="card__title">R$299.000.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 340.000.000</span>
-                        <span class="preco-novo">Por R$ 299.000.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 16 -->
-            <article class="card__article">
-                <img src="img/Pingente-Life-Religioso-Anjo-da-Guarda-em-Prata-925-1146_1_set.webp" alt="image"
-                    class="card__img">
-                <div class="card__data">
-
-                    <span class="card__description">Anel de noivado</span>
-                    <h2 class="card__title">R$780.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 890.000</span>
-                        <span class="preco-novo">Por R$ 780.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 17 -->
-            <article class="card__article">
-                <img src="img/relogio--eternity-28-mm-em-ouro-branco-com-diamantes-73580846_1.webp" alt="image"
-                    class="card__img">
-                <div class="card__data">
-                    <span class="card__description">Anel de noivado</span>
-                    <h2 class="card__title">R$192.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 240.000</span>
-                        <span class="preco-novo">Por R$ 192.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 18 -->
-            <article class="card__article">
-                <img src="img/Relogio-Festina-Feminino-Aco-Prateado-105134_1_set.webp" alt="image" class="card__img">
-                <div class="card__data">
-                    <span class="card__description">Anel de noivado</span>
-                    <h2 class="card__title">R$87.000.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 97.000.000</span>
-                        <span class="preco-novo">Por R$ 87.000.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-            <!-- Produto 19 -->
-            <article class="card__article">
-                <img src="img/Relogio-TAG-Heuer-Carrera-Chronograph-Masculino-CBN2013FC6483-55539_1_set.webp"
-                    alt="image" class="card__img">
-                <div class="card__data">
-
-                    <span class="card__description">Anel de noivado</span>
-                    <h2 class="card__title">R$1.700.000</h2>
-                    <div class="preco-promocional">
-                        <span class="preco-antigo">De R$ 2.000.000</span>
-                        <span class="preco-novo">Por R$ 1.700.000</span>
-                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
-                    </div>
-                    <a href="#" class="card__button">Sobre</a>
-
-                </div>
-            </article>
-
-
-        </div>
-=======
->>>>>>> 42c5929f65437b05d10d365839968b3dd2fcd8ad
-
-
-        <button class="carousel-nav prev" onclick="moveCarousel(-1)">&#10094;</button>
-        <button class="carousel-nav next" onclick="moveCarousel(1)">&#10095;</button>
->>>>>>> 49dd4b8c21b38b3c2c2f316c253be44a1b9dc1b9
-    </div>
-
-    <section class="novidade">
+      
+        <section class="novidade">
         <video autoplay muted loop playsinline>
             <source src="videos/relogio2.mp4" type="video/mp4">
         </video>
@@ -891,44 +620,35 @@
             </p>
         </div>
     </section>
-    <section class="novidade">
-        <video autoplay muted loop playsinline>
-            <source src="videos/relogio.mp4" type="video/mp4">
-        </video>
+
+
+    <section>
+
+        <img style="display: block; width: 100%; height: auto;" src="img/anelnovo.png" alt="">
+        <h1>Edição Limitada
+        Anel em Ouro com Diamante Rosa Minerado No Imalaia</h1>
+
+        <div style="display: flex; justify-content: center; margin-top: 20px;">
+  <button style="
+    background-color: #383480;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  ">
+    Reserve o Seu
+  </button>
+</div>
+
     </section>
-
-    <section class="sobre">
-        <h2>Sobre Nós</h2>
-        <div class="equipe">
-            <div class="membro">
-                <img src="img/image copy 2.png" alt="Foto de Nicole Lima">
-                <h3>Nicole Lima</h3>
-                <a href="https://www.linkedin.com/in/nicole-oliveira-lima-470309323/"
-                    class="botao-linkedin">LinkedIn</a>
-            </div>
-            <div class="membro">
-                <img src="img/image copy 3.png" alt="Foto de Júlio Trigueiro">
-                <h3>Júlio Trigueiro</h3>
-                <a href="https://www.linkedin.com/in/julio-trigueiro-460309323/" class="botao-linkedin">LinkedIn</a>
-            </div>
-            <div class="membro">
-                <img src="img/fotomiguel.png" alt="Foto de Miguel Silva">
-                <h3>Miguel Silva</h3>
-                <a href="https://www.linkedin.com/in/miguel-silva-santos-b3b5832b5/" class="botao-linkedin">LinkedIn</a>
-            </div>
-            <div class="membro">
-                <img src="img/image copy.png" alt="Foto de Laura Lopes">
-                <h3>Laura Lopes</h3>
-                <a href="https://www.linkedin.com/in/laura-lopes-464306323/" class="botao-linkedin">LinkedIn</a>
-            </div>
-        </div>
-    </section>
-
-<<<<<<< HEAD
+    
+    
 
 
-=======
->>>>>>> 42c5929f65437b05d10d365839968b3dd2fcd8ad
     <script src="inicio.js"></script>
 
     <footer class="footer-compromise">
@@ -989,6 +709,34 @@
                 <a href="#"><img src="img/tiktok.png" alt="TikTok"></a>
             </div>
         </div>
+
+        
+    <section class="sobre">
+        <h2>Sobre Nós</h2>
+        <div class="equipe">
+            <div class="membro">
+                <img src="img/image copy 2.png" alt="Foto de Nicole Lima">
+                <h3>Nicole Lima</h3>
+                <a href="https://www.linkedin.com/in/nicole-oliveira-lima-470309323/"
+                    class="botao-linkedin">LinkedIn</a>
+            </div>
+            <div class="membro">
+                <img src="img/image copy 3.png" alt="Foto de Júlio Trigueiro">
+                <h3>Júlio Trigueiro</h3>
+                <a href="https://www.linkedin.com/in/julio-trigueiro-460309323/" class="botao-linkedin">LinkedIn</a>
+            </div>
+            <div class="membro">
+                <img src="img/fotomiguel.png" alt="Foto de Miguel Silva">
+                <h3>Miguel Silva</h3>
+                <a href="https://www.linkedin.com/in/miguel-silva-santos-b3b5832b5/" class="botao-linkedin">LinkedIn</a>
+            </div>
+            <div class="membro">
+                <img src="img/image copy.png" alt="Foto de Laura Lopes">
+                <h3>Laura Lopes</h3>
+                <a href="https://www.linkedin.com/in/laura-lopes-464306323/" class="botao-linkedin">LinkedIn</a>
+            </div>
+        </div>
+    </section>
 
         <div class="footer-bottom">
             <p>&copy; 2025 Joalheria Compromise. Todos os direitos reservados.</p>
