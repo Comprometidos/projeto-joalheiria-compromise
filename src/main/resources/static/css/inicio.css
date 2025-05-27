@@ -2,18 +2,17 @@
 
 
 body {
-
-  background-color: rgb(11, 10, 10);
-  color: white;
-  font-family: Arial, sans-serif;
-
+    margin: 0;
+    padding: 0;
+    background-color:#020202;
+    color: #0e0d0d;
 }
 
 header {
     
     font-style:italic !important;
-    background-color:#050505;
-    color: #020202fc;
+    background-color:#070505;
+    color: #090909fc;
     padding: 20px;
     text-align: center;
     display: flex;
@@ -41,7 +40,7 @@ header {
     left: 50%; /* Centraliza horizontalmente */
     transform: translateX(-50%) translateY(-50%); /* Centraliza o texto vertical e horizontalmente */
     padding: 30px 40px; /* Espaçamento interno do quadrado */
-    background-color: rgba(27, 20, 20, 0.5); /* Fundo preto com opacidade de 50% */
+    background-color: rgba(12, 9, 9, 0.5); /* Fundo preto com opacidade de 50% */
     color: white; /* Cor do texto */
     font-size: 50px !important; /* Tamanho do texto */
     text-align: center; /* Centraliza o texto dentro do quadrado */
@@ -69,7 +68,7 @@ nav {
 }
 
 .btn {
-    background-color: #060606;
+    background-color: #0c0b0b;
     color: #9c9898  ;
     border: none;
     cursor: pointer;
@@ -79,7 +78,7 @@ nav {
 
 .btn:hover {
     color: #ffffff;
-    background-color: #000000;
+    background-color: #080808;
     transform: scale(1.05);
 }
 
@@ -94,7 +93,7 @@ nav {
 
 .banner {
 
-    background-color:#000000;
+    background-color:#0c0c0c;
     justify-content:flex-end;
     align-items:self-start;
     text-align:end; 
@@ -105,7 +104,7 @@ nav {
 
 .banner h2 {
     
-    align-items:self-start;
+    align-items:self-start!important;
     font-size: 30px;
     margin: 0;
     font-weight: bold;
@@ -119,9 +118,9 @@ nav {
 .sobre {
     padding: 60px;
     text-align: center;
-    background-color: #f8f6f6;
+    background-color: #030303;
     margin: 40px auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(238, 235, 235, 0.1);
     max-width: 100%;
 }
 
@@ -176,13 +175,8 @@ nav {
 
 .botao-linkedin{
     background-color: rgb(80, 137, 235);
-}
+    
 
-.anelnovo{
-  display: flex;
-  text-align: center;
-  align-items: center;
-  
 }
 
 footer {
@@ -194,6 +188,50 @@ footer {
     border-top: 2px solid #79b0b1;
 }
 
+.card__title{
+    color: #000000 !important;
+
+
+
+}
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .card__container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+  }
+
+  .card__article {
+    min-width: 340px;
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+  }
+
+  .carousel-nav.prev {
+    left: 10px;
+  }
+
+  .carousel-nav.next {
+    right: 10px;
+  }
   /* FOOTER GERAL */
 .footer-compromise {
     background-color: #f9f9f7;
@@ -325,39 +363,3 @@ footer {
     max-width: 1000px;
     margin: 0 auto;
   }  
-/* relogio */
-  .relogio {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .relogio-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .Relogio1 {
-    flex: 1 1 30%;
-    max-width: 30%;
-  }
-
-  .Relogio1 img {
-    width: 100%;
-    height: auto;
-  }
-
-  @media (max-width: 768px) {
-    .Relogio1 {
-      flex: 1 1 45%;
-      max-width: 45%;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .Relogio1 {
-      flex: 1 1 90%;
-      max-width: 90%;
-    }
-  }
