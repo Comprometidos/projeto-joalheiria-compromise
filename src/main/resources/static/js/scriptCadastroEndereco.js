@@ -27,11 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const idUsuario = urlParams.get("idUsuario");
 
-    if (!idUsuario) {
-        alert("ID do usuário não encontrado na URL");
-        return;
-    }
-
     const form = document.getElementById("cadastroEnderecoForm");
 
     form.addEventListener("submit", async (event) => {
