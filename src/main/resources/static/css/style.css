@@ -3,8 +3,7 @@
 
 body {
 
-  background-color: rgb(11, 10, 10);
-  color: rgb(252, 218, 218);
+  background-color:rgb(216, 194, 141);
   font-family: Arial, sans-serif;
 
 }
@@ -88,12 +87,10 @@ nav {
 
 .banner {
 
-    background-color:rgb(216, 194, 141);
+    background-color:rgb(216, 194, 141); 
     justify-content:flex-end;
     align-items:self-start;
     text-align:end; 
-    color: rgb(239, 236, 236);
-    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
     padding: 20px;
 }
 
@@ -235,14 +232,11 @@ footer {
   
   .footer-column ul li a {
     text-decoration: none;
-    color: #444;
+    color: #000000;
     font-size: 14px;
     transition: color 0.3s ease;
   }
   
-  .footer-column ul li a:hover {
-    color: #bfa570; /* cor dourada sutil */
-  }
   
   /* REDES SOCIAIS */
   .footer-social {
