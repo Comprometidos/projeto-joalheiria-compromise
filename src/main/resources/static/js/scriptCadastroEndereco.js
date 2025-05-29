@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(errorData.message || "Erro ao cadastrar o endereço do cliente");
             } else {
                 alert("Endereço cadastrado com sucesso!");
-                window.location.href = 'sucessocadastro.html';
+                window.location.href = 'loginCliente.html';
             }
         } catch (error) {
             console.error("Erro ao cadastrar o endereço do cliente", error);

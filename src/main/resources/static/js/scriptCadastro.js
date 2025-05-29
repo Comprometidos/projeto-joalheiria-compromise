@@ -48,8 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
+            // Salva no localStorage
+            localStorage.setItem('usuario', JSON.stringify({
+                nomeUsuario: data.nomeUsuario,
+                email: data.email,
+                senha: data.senha
+            }));
+
             alert('Usuário cadastrado com sucesso!\nNome: ' + data.nomeUsuario);
-            window.location.href = 'loginCliente.html';
+            window.location.href = 'endereco.html';
         })
         .catch(error => { 
             console.error('Erro no cadastro:', error);
