@@ -49,11 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(data => {
             // Salva no localStorage
-            localStorage.setItem('usuario', JSON.stringify({
-                nomeUsuario: data.nomeUsuario,
-                email: data.email,
-                senha: data.senha
-            }));
+           localStorage.setItem('idUsuario', data.idUsuario); // salva só o ID separadamente
+localStorage.setItem('usuario', JSON.stringify({
+    idUsuario: data.idUsuario,
+    nomeUsuario: data.nomeUsuario,
+    email: data.email,
+    senha: data.senha
+}));
+
 
             alert('Usuário cadastrado com sucesso!\nNome: ' + data.nomeUsuario);
             window.location.href = 'endereco.html';

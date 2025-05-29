@@ -1,16 +1,16 @@
 document.getElementById("cep").addEventListener("input", async function () {
     const cep = this.value.replace(/\D/g, "");
-
+    
     if (cep.length === 8) {
         try {
             const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-
+            
             if (!response.ok) throw new Error("Erro ao buscar CEP");
-
+            
             const dados = await response.json();
-
+            
             if (dados.erro) {
-                alert("CEP não encontrado.");
+                alert("CEP não encontrado.")
                 return;
             }
             document.getElementById("rua").value = dados.logradouro || "";
@@ -25,17 +25,18 @@ document.getElementById("cep").addEventListener("input", async function () {
 
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const idUsuario = urlParams.get("idUsuario");
+    const idUsuario = localStorage.getItem("idUsuario");
+ 
+
+    if (!idUsuario) {
+        alert("ID do usuário não encontrado na URL");
+        return;
+    }
 
     const form = document.getElementById("cadastroEnderecoForm");
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
-
-        if (!idUsuario) {
-            alert("ID do usuário não encontrado. Acesse a página pelo link correto com ?idUsuario=123.");
-            return;
-        }
 
         const cep = document.getElementById("cep").value;
         const rua = document.getElementById("rua").value;
