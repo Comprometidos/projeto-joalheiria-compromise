@@ -1,16 +1,16 @@
 document.getElementById("cep").addEventListener("input", async function () {
     const cep = this.value.replace(/\D/g, "");
-    
+
     if (cep.length === 8) {
         try {
             const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-            
+
             if (!response.ok) throw new Error("Erro ao buscar CEP");
-            
+
             const dados = await response.json();
-            
+
             if (dados.erro) {
-                alert("CEP não encontrado.")
+                alert("CEP não encontrado.");
                 return;
             }
             document.getElementById("rua").value = dados.logradouro || "";
@@ -31,6 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
+
+        if (!idUsuario) {
+            alert("ID do usuário não encontrado. Acesse a página pelo link correto com ?idUsuario=123.");
+            return;
+        }
 
         const cep = document.getElementById("cep").value;
         const rua = document.getElementById("rua").value;
