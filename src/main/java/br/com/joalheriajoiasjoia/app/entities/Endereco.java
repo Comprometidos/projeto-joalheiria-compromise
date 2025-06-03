@@ -21,25 +21,25 @@ public class Endereco {
 		@Column(name = "idEndereco", nullable = false)
 		private Long idEndereco;
 		
-		@Column(name = "cep", unique = false)
+		@Column(name = "cep")
 		private String cep;
 		
 		@Column(name = "rua", nullable = false, length = 100)
 		private String rua;
 		
-		@Column(name = "bairro", nullable = false, length = 100, unique = true)
+		@Column(name = "bairro", nullable = false, length = 100)
 		private String bairro;
 		
-		@Column(name = "numero", nullable = false, unique = true, length = 50)
+		@Column(name = "numero", nullable = false, length = 50)
 		private String numero;
 		
-		@Column(name = "cidade", nullable = false,  unique = false)
+		@Column(name = "cidade", nullable = false)
 		private String cidade;
 		
 		@Column(name = "estado", unique = false)
 		private String estado;
 		
-		@Column(name = "complemento", unique = false)
+		@Column(name = "complemento")
 		private String complemento;
 		
 		@ManyToOne
