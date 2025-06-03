@@ -118,6 +118,29 @@
         </form>
         <div class="footer-text">Ainda não tem conta? <a href="cadastrocliente.html">Cadastre-se</a></div>
     </div>
+	
+	<script>
+	document.getElementById('loginForm').addEventListener('submit', function (event) {
+	    event.preventDefault();
+
+	    const email = document.getElementById('email').value;
+	    const senha = document.getElementById('password').value;
+	    const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+	    if (!usuario) {
+	        alert("Nenhum usuário cadastrado. Cadastre-se primeiro.");
+	        return;
+	    }
+
+	    if (usuario.email === email && usuario.senha === senha) {
+	        alert("Login bem-sucedido! Redirecionando...");
+	        window.location.href = "perfil.html";
+	    } else {
+	        alert("Email ou senha incorretos.");
+	    }
+	});
+	</script>
+
 </body>
 
 </html>

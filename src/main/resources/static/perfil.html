@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Perfil do Usuário</h1>
+        <div class="perfil-box">
+            <p><strong>Nome:</strong> <span id="nome"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>ID do Usuário:</strong> <span id="id"></span></p>
+       <div class="button-group">
+    <button onclick="voltar()">Voltar para o Início</button>
+   
+</div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+            if (!usuario) {
+                alert('Usuário não encontrado. Faça login novamente.');
+                window.location.href = 'loginCliente.html';
+                return;
+            }
+
+            document.getElementById('nome').textContent = usuario.nomeUsuario;
+            document.getElementById('email').textContent = usuario.email;
+            document.getElementById('id').textContent = usuario.idUsuario;
+        });
+
+        function voltar() {
+    window.location.href = "index.html";
+}
+
+    </script>
+</body>
+</html>
