@@ -38,7 +38,7 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(Long idProduto, String nomeProduto, String categoria, String tipo, String descricao, double preco, Stirng imgUrl,String ornamentos) {
+    public Produto(Long idProduto, String nomeProduto, String categoria, String tipo, String descricao, double preco, String imgUrl,String ornamentos) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.categoria = categoria;
