@@ -31,16 +31,20 @@ public class Produto {
     @Column(name = "preco", nullable = false)
     private double preco;
     
+    @Column(name = "imgUrl", nullable = false)
+    private String imgUrl;
+    
     // Construtores
     public Produto() {
     }
 
-    public Produto(Long idProduto, String nomeProduto, String categoria, String tipo, String descricao, double preco, String ornamentos) {
+    public Produto(Long idProduto, String nomeProduto, String categoria, String tipo, String descricao, double preco, Stirng imgUrl,String ornamentos) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.categoria = categoria;
         this.tipo = tipo;
         this.preco = preco;
+        this.imgUrl = imgUrl;
         this.ornamentos = ornamentos;
     }
 
@@ -83,6 +87,14 @@ public class Produto {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+    
+    public String getImgUrl() {
+    	return imgUrl;
+    }
+    
+    public void setImgrUrl(String imgUrl) {
+    	this.imgUrl = imgUrl;
     }
 
     public String getOrnamentos() {
