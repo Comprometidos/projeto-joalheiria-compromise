@@ -24,27 +24,27 @@ INSERT IGNORE INTO tb_tipo_produto (id_tipo_produto, nome_tipo_produto, descrica
 (4, 'Ouro Rosê', 'Ouro meio rosado');
 
 -- Inserindo Produtos
-INSERT IGNORE INTO tb_produto (id_produto, categoria, nome_produto, ornamentos, preco, tipo_produto) VALUES
-(1, 'Aneis', 'Anel de diamante rosa', 'Diamante Rosa', 155.4, 2),
-(2, 'Aneis', 'Anel com pérola e ouro branco', 'Ouro Branco', 1928.8, 2),
-(3, 'Aneis', 'Anel de prata com pedras de diamante', 'Diamante', 1333.2, 2),
-(4, 'Aneis', 'Anel de prata e pedras de diamantes', 'Diamante', 196.1, 2),
-(5, 'Aneis', 'Anel florirose', 'Rubi', 150.1, 4),
-(6, 'Brinco', 'Brinco Cravejado de Diamante', 'Diamante', 110.1, 2),
-(7, 'Brinco', 'Argola Ouro Amarelo', 'Nenhum', 330.1, 1),
-(8, 'Relógios', 'Relógio cravejado banhado a ouro branco', 'Nenhum', 1045.1, 2),
-(9, 'Pulseira', 'Pulseira de Prata coração', 'Nenhum', 720.1, 2),
-(10, 'Pulseira', 'Pulseira Cravejada Ouro-rose', 'Nenhum', 215.1, 4),
-(11, 'Pulseira', 'Pulseira-rose banhada a Ouro', 'Nenhum', 135.1, 4),
-(12, 'Pulseira', 'Pulseira coração de Ouro', 'Nenhum', 198.1, 1),
-(13, 'Pulseira', 'Pulseira em laço Pratas Preciosas', 'Nenhum', 350.1, 1),
-(14, 'Pulseira', 'Pulseira Riviera em prata 925', 'Nenhum', 298.1, 1),
-(15, 'Colar', 'Colar com pingente de diamante negro', 'Diamante Negro', 980.1, 2),
-(16, 'Colar', 'Colar de ouro branco com safira azul', 'Safira', 1250.1, 1),
-(17, 'Relógios', 'Relógio automático com pulseira de couro', 'Nenhum', 875.1, 3),
-(18, 'Brinco', 'Brinco de esmeralda com ouro rosé', 'Esmeralda', 1150.1, 2),
-(19, 'Aneis', 'Anel de ouro amarelo com topázio', 'Topázio', 460.1, 1),
-(20, 'Colar', 'Colar minimalista de prata com rubi', 'Rubi', 312.1, 4);
+INSERT IGNORE INTO tb_produto (id_produto, categoria, nome_produto, ornamentos, preco, tipo_produto, img_url) VALUES
+(1, 'Aneis', 'Anel de diamante rosa', 'Diamante Rosa', 155.4, 2, 'https://imagem.com'),
+(2, 'Aneis', 'Anel com pérola e ouro branco', 'Ouro Branco', 1928.8, 2, 'https://imagem.com'),
+(3, 'Aneis', 'Anel de prata com pedras de diamante', 'Diamante', 1333.2, 2, 'https://imagem.com'),
+(4, 'Aneis', 'Anel de prata e pedras de diamantes', 'Diamante', 196.1, 2, 'https://imagem.com'),
+(5, 'Aneis', 'Anel florirose', 'Rubi', 150.1, 4, 'https://imagem.com'),
+(6, 'Brinco', 'Brinco Cravejado de Diamante', 'Diamante', 110.1, 2, 'https://imagem.com'),
+(7, 'Brinco', 'Argola Ouro Amarelo', 'Nenhum', 330.1, 1, 'https://imagem.com'),
+(8, 'Relógios', 'Relógio cravejado banhado a ouro branco', 'Nenhum', 1045.1, 2, 'https://imagem.com'),
+(9, 'Pulseira', 'Pulseira de Prata coração', 'Nenhum', 720.1, 2, 'https://imagem.com'),
+(10, 'Pulseira', 'Pulseira Cravejada Ouro-rose', 'Nenhum', 215.1, 4, 'https://imagem.com'),
+(11, 'Pulseira', 'Pulseira-rose banhada a Ouro', 'Nenhum', 135.1, 4, 'https://imagem.com'),
+(12, 'Pulseira', 'Pulseira coração de Ouro', 'Nenhum', 198.1, 1, 'https://imagem.com'),
+(13, 'Pulseira', 'Pulseira em laço Pratas Preciosas', 'Nenhum', 350.1, 1, 'https://imagem.com'),
+(14, 'Pulseira', 'Pulseira Riviera em prata 925', 'Nenhum', 298.1, 1, 'https://imagem.com'),
+(15, 'Colar', 'Colar com pingente de diamante negro', 'Diamante Negro', 980.1, 2, 'https://imagem.com'),
+(16, 'Colar', 'Colar de ouro branco com safira azul', 'Safira', 1250.1, 1, 'https://imagem.com'),
+(17, 'Relógios', 'Relógio automático com pulseira de couro', 'Nenhum', 875.1, 3, 'https://imagem.com'),
+(18, 'Brinco', 'Brinco de esmeralda com ouro rosé', 'Esmeralda', 1150.1, 2, 'https://imagem.com'),
+(19, 'Aneis', 'Anel de ouro amarelo com topázio', 'Topázio', 460.1, 1, 'https://imagem.com'),
+(20, 'Colar', 'Colar minimalista de prata com rubi', 'Rubi', 312.1, 4, 'https://imagem.com');
 
 -- Inserindo Usuarios
 INSERT IGNORE INTO tb_usuario (id_usuario, cpf, dt_nascimento, email, nome_usuario, senha, telefone, id_tipo_usuario) VALUES
