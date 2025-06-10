@@ -112,34 +112,14 @@
             <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required />
 
             <label for="password">Senha</label>
-            <input type="password" id="password" name="password" placeholder="Sua senha" required />
+            <input type="password" id="senha" name="password" placeholder="Sua senha" required />
 
             <button type="submit">Entrar</button>
         </form>
         <div class="footer-text">Ainda não tem conta? <a href="cadastrocliente.html">Cadastre-se</a></div>
     </div>
 	
-	<script>
-	document.getElementById('loginForm').addEventListener('submit', function (event) {
-	    event.preventDefault();
-
-	    const email = document.getElementById('email').value;
-	    const senha = document.getElementById('password').value;
-	    const usuario = JSON.parse(localStorage.getItem('usuario'));
-
-	    if (!usuario) {
-	        alert("Nenhum usuário cadastrado. Cadastre-se primeiro.");
-	        return;
-	    }
-
-	    if (usuario.email === email && usuario.senha === senha) {
-	        alert("Login bem-sucedido! Redirecionando...");
-	        window.location.href = "perfil.html";
-	    } else {
-	        alert("Email ou senha incorretos.");
-	    }
-	});
-	</script>
+	<script src="./js/scriptLogin.js"></script>
 
 </body>
 

@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
             },
             body: JSON.stringify({
                 nomeUsuario,
@@ -41,21 +40,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
+			// Verifica se a resposta tem conteúdo antes de tentar parsear JSON
             const contentLength = response.headers.get('Content-Length');
             if (contentLength === '0' || !contentLength) {
+				// Se não houver conteúdo, retorna os dados que foram enviados
                 return { nomeUsuario, email, senha };
             }
             return response.json();
         })
         .then(data => {
             // Salva no localStorage
-           localStorage.setItem('idUsuario', data.idUsuario); // salva só o ID separadamente
-localStorage.setItem('usuario', JSON.stringify({
-    idUsuario: data.idUsuario,
-    nomeUsuario: data.nomeUsuario,
-    email: data.email,
-    senha: data.senha
-}));
+			localStorage.setItem('idUsuario', data.idUsuario); // salva só o ID separadamente
+			localStorage.setItem('usuario', JSON.stringify({
+				idUsuario: data.idUsuario,
+				nomeUsuario: data.nomeUsuario,
+				email: data.email,
+				senha: data.senha
+			})
+		);
 
 
             alert('Usuário cadastrado com sucesso!\nNome: ' + data.nomeUsuario);
