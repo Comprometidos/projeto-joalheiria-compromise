@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
         .then(usuario => {
-            alert('Login realizado com sucesso! Bem-vindo, ' + usuario.nomeUsuario);
+            
             // Armazena os dados do aluno e redireciona
             localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
             window.location.href = 'perfil.html';

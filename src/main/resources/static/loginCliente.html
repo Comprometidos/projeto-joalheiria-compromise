@@ -7,16 +7,6 @@
     <title>Login</title>
     <style>
         /* vídeo de fundo */
-        #background-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1; /* atrás do conteúdo */
-            object-fit: cover;
-        }
-
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -27,7 +17,7 @@
             position: relative;
             overflow: hidden;
             color: #f2f2f2;
-            background: #000; /* fallback caso vídeo não carregue */
+            background-color:rgb(216, 194, 141); /* fallback caso vídeo não carregue */
         }
 
         .login-container {
@@ -100,10 +90,6 @@
 </head>
 
 <body>
-    <video autoplay muted loop id="background-video">
-        <source src="videos/relogio.mp4" type="video/mp4" />
-        Seu navegador não suporta vídeo HTML5.
-    </video>
 
     <div class="login-container">
         <h2>Faça Login</h2>

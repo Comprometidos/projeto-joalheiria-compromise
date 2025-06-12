@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compromise</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <style>
         .preco-promocional {
             display: flex;
@@ -36,13 +36,14 @@
 <body>
     <header>
         <nav>
-            <button class="btn" onclick="location.href='perfil.html'">Perfil</button>
+            <button class="btn" onclick="location.href='cadastrocliente.html'">Cadastro</button>
+            <button class="btn" onclick="location.href='loginCliente.html'">Login</button>
             <button class="btn" onclick="location.href='cadastroproduto.html'">Cadastro Produto</button>
         </nav>
     </header>
 
-   <section id="logo" class="logo" style="position: relative; width: 100%; overflow: hidden;">
-    <div class="texto-overlay" style="
+    <section id="logo" class="logo" style="position: relative; width: 100%; overflow: hidden;">
+        <div class="texto-overlay" style="
         position: absolute;
         top: 50%;
         left: 50%;
@@ -53,19 +54,19 @@
         text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
         z-index: 2;
         text-align: center;">
-        joalheria compromise
-    </div>
-    <img src="img/inicio.png" alt="" style="
+            joalheria compromise
+        </div>
+        <img src="img/inicio.png" alt="" style="
         width: 100%;
         height: auto;
         display: block;
         object-fit: cover;
         max-height: 100vh;">
-</section>
+    </section>
 
-<section id="banner" class="banner" style="padding: 2rem; text-align: center;">
-    <p style="font-size: 1.5rem; color: #111;">Peças únicas para momentos inesquecíveis.</p>
-</section>
+    <section id="banner" class="banner" style="padding: 2rem; text-align: center;">
+        <p style="font-size: 1.5rem; color: #111;">Peças únicas para momentos inesquecíveis.</p>
+    </section>
 
 
     <!-- catalogo -->
@@ -74,24 +75,24 @@
             box-sizing: border-box;
         }
 
-       body {
-  text-align: center;
-  margin: 60px 0 40px;
-  font-family: 'Playfair Display', serif;
-  color: #1a1a1a;
-}
+        body {
+            text-align: center;
+            margin: 60px 0 40px;
+            font-family: 'Playfair Display', serif;
+            color: #1a1a1a;
+        }
 
- h1 {
-  font-size: 3.2rem;
-  font-weight: 400;
-  letter-spacing: 4px;
-  color: #000000;
-  text-transform: uppercase;
-  border-bottom: 1px solid #82643b;
-  display: inline-block;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-}
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: #000000;
+            text-transform: uppercase;
+            border-bottom: 1px solid #82643b;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
 
         .catalog-container {
             max-width: 1200px;
@@ -206,7 +207,7 @@
         <section class="catalog-container">
 
             <!-- Produto 1 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=1">
                 <img src=" img/Anel-Color-em-Prata-925-com-Rodolita-e-Topazios-9262_1_set.webp"
                     alt="Anel de diamante rosa" class="card__img" />
                 <div class="card__data">
@@ -217,12 +218,12 @@
                         <span class="preco-novo">Por R$ 155.400</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="http://localhost:8080/produto.html?id=1" class="card__button">Encomendar</a>
-                </div>
+                    
+                </div></a>
             </article>
 
             <!-- Produto 2 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=2">
                 <img src=" img/Anel-Fiori-em-Ouro-Branco-18k-com-Perola-e-Diamantes-0-29-ct-101844_2_set.webp"
                     alt="Anel com pérola e ouro branco" class="card__img" />
                 <div class="card__data">
@@ -233,12 +234,12 @@
                         <span class="preco-novo">Por R$ 1.928.800</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-                </div>
+                    
+                </div></a>
             </article>
 
             <!-- Produto 3 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=3">
                 <img src="img/Anel-Life-em-Prata-925-com-Pedras-343638-1600-1600.png"
                     alt="Anel de prata com pedras de diamante" class="card__img" />
                 <div class="card__data">
@@ -249,12 +250,12 @@
                         <span class="preco-novo">Por R$ 1.333.200</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-                </div>
+                    
+                </div></a>
             </article>
 
             <!-- Produto 4 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=4">
                 <img src="img/Anel-Life-Skyline-II-em-Prata-925-com-Pedras-Incolores-103829_1_set.webp"
                     alt="Anel de prata e pedras de diamantes" class="card__img" />
                 <div class="card__data">
@@ -265,12 +266,12 @@
                         <span class="preco-novo">Por R$ 196.000</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-                </div>
+                
+                </div></a>
             </article>
 
             <!-- Produto 5 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=5">
                 <img src="img/Anel-rose-em-Ouro-347914-1600-1600.png" alt="Anel florirose" class="card__img" />
                 <div class="card__data">
                     <span class="card__description">Anel florirose</span>
@@ -280,12 +281,12 @@
                         <span class="preco-novo">Por R$ 150.000</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="#" class="card__button">Encomendar</a>
-                </div>
+                    
+                </div></a>
             </article>
 
             <!-- Produto 6 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=6">
                 <img src="img/Argola-Life-Maxi-II-Prata-Cravejado-69564_1_set.webp" alt="Brinco Cravejado de Diamante"
                     class="card__img" />
                 <div class="card__data">
@@ -296,12 +297,12 @@
                         <span class="preco-novo">Por R$ 110.000</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-                </div>
+                    
+                </div></a>
             </article>
 
             <!-- Produto 7 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=7">
                 <img src="img/Argola-Redonda-em-Ouro-Amarelo-18k-15mm-6680_1_set.webp" alt="Argola Ouro Amarelo"
                     class="card__img" />
                 <div class="card__data">
@@ -312,12 +313,12 @@
                         <span class="preco-novo">Por R$ 330.000</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-                </div>
+                    
+                </div></a>
             </article>
 
             <!-- Produto 8 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=8">
                 <img src=" img/relogio-atlas-2-ponteiros-24-mm-em-aco-inoxidavel-com-diamantes-62867469_1.webp"
                     alt="Brinco Ouro Branco com Brilhantes" class="card__img" />
                 <div class="card__data">
@@ -328,13 +329,13 @@
                         <span class="preco-novo">Por R$ 1.045.000</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-                </div>
+                
+                </div></a>
             </article>
 
 
             <!-- Produto 10 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=10">
                 <img src=" img/Pulseira-coraçao-em-Prata-925-190624-1200-1200.png" alt="Brinco Ouro Rosa com Diamantes"
                     class="card__img" />
                 <div class="card__data">
@@ -345,12 +346,12 @@
                         <span class="preco-novo">Por R$ 720.000</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-                </div>
+                    
+                </div></a>
             </article>
 
             <!-- Produto 11 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=11">
                 <img src=" img/Pulseira-Cravejada-rose-eme-Ouro187382-800-800.png" alt="Brinco Candy em Prata"
                     class="card__img" />
                 <div class="card__data">
@@ -361,12 +362,12 @@
                         <span class="preco-novo">Por R$ 215.000</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-                </div>
+                
+                </div></a>
             </article>
 
             <!-- Produto 12 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=12">
                 <img src=" img/Pulseira-Life-banhada-em-Ouro-Branco-20k-180033-800-800.png"
                     alt="Brinco Fine em Prata com Zircônias" class="card__img" />
                 <div class="card__data">
@@ -377,28 +378,28 @@
                         <span class="preco-novo">Por R$ 135.000</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-                </div>
+                    
+                </div></a>
             </article>
 
             <!-- Produto 13 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=13">
                 <img src=" img/Pulseira-Life-em-Ouro-308259-800-800.png" alt="Colar Colorido em Prata"
                     class="card__img" />
                 <div class="card__data">
                     <span class="card__description">Pulseira coração de Ouro </span>
-                        <h2 class="card__title">R$198.000</h2>
-                        <div class="preco-promocional">
-                            <span class="preco-antigo">De R$ 240.000</span>
-                            <span class="preco-novo">Por R$ 198.000</span>
-                            <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
-                        </div>
-                        <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-                </div>
+                    <h2 class="card__title">R$198.000</h2>
+                    <div class="preco-promocional">
+                        <span class="preco-antigo">De R$ 240.000</span>
+                        <span class="preco-novo">Por R$ 198.000</span>
+                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
+                    </div>
+                    
+                </div></a>
             </article>
 
             <!-- Produto 14 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=14">
                 <img src=" img/Pulseira-Life-Petit-Laco-em-Prata-925-90543_1_set.webp" alt="Colar Essence em Prata"
                     class="card__img" />
                 <div class="card__data">
@@ -408,13 +409,13 @@
                         <span class="preco-antigo">De R$ 400.000</span>
                         <span class="preco-novo">Por R$ 350.000</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
-                    </div>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-                </div>
+                    </div> 
+                    
+                </div> </a>
             </article>
 
             <!-- Produto 15 -->
-            <article class="card__article">
+            <article class="card__article"><a href="produto.html?id=15">
                 <img src=" img/Pulseira-Riviera-em-Prata-925-com-Topazios-Incolores-87068_1_set.webp"
                     alt="Colar Life em Prata" class="card__img" />
                 <div class="card__data">
@@ -425,280 +426,285 @@
                         <span class="preco-novo">Por R$ 298.000</span>
                         <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
                     </div>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
+                   
                 </div>
+            </a>
             </article>
-
         </section>
 
     </body>
 
-   
-   <section class="lancamentos-section">
-  <h1>Lançamentos</h1>
-</section>
 
-<section class="catalog-container-2">
+    <section class="lancamentos-section">
+        <h1>Lançamentos</h1>
+    </section>
 
-  <!-- Produto 18 -->
-  <article class="card__article">
-    <img src="img/Relogio-Festina-Feminino-Aco-Prateado-105134_1_set.webp" alt="Relogio Festina Feminino Aço Prateado" class="card__img" />
-    <div class="card__data">
-      <span class="card__description">Relógio Festina Feminino Aço Prateado</span>
-      <h2 class="card__title">R$ 20.000</h2>
-      <div class="preco-promocional">
-        <span class="preco-antigo">De R$ 50.000</span>
-        <span class="preco-novo">Por R$ 20.000</span>
-        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
-      </div>
-      <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-    </div>
-  </article>
+    <section class="catalog-container-2">
 
-  <!-- Produto 19 -->
-  <article class="card__article">
-    <img src="img/Relogio-TAG-Heuer-Carrera-Chronograph-Masculino-CBN2013FC6483-55539_1_set.webp" alt="Relógio TAG Heuer Chronograph Masculino" class="card__img" />
-    <div class="card__data">
-      <span class="card__description">Relógio TAG Heuer Chronograph Masculino</span>
-      <h2 class="card__title">R$ 175.000</h2>
-      <div class="preco-promocional">
-        <span class="preco-antigo">De R$ 210.000</span>
-        <span class="preco-novo">Por R$ 175.000</span>
-        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
-      </div>
-      <a href="https://www.whatsapp.com/?lang=pt_BR" class="card__button">Encomendar</a>
-    </div>
-  </article>
+        <!-- Produto 18 -->
+        <article class="card__article"><a href="produto.html?id=18">
+            <img src="img/Relogio-Festina-Feminino-Aco-Prateado-105134_1_set.webp"
+                alt="Relogio Festina Feminino Aço Prateado" class="card__img" />
+            <div class="card__data">
+                <span class="card__description">Relógio Festina Feminino Aço Prateado</span>
+                <h2 class="card__title">R$ 20.000</h2>
+                <div class="preco-promocional">
+                    <span class="preco-antigo">De R$ 50.000</span>
+                    <span class="preco-novo">Por R$ 20.000</span>
+                    <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
+                </div>
+                
+            </div></a>
+        </article>
 
-</section>
-<style>
-/* Seção Lançamentos */
-.lancamentos-section {
-  text-align: center;
-  margin: 60px 0 40px;
-  font-family: 'Playfair Display', serif;
-  color: #1a1a1a;
-}
+        <!-- Produto 19 -->
+        <article class="card__article"><a href="produto.html?id=19">
+            <img src="img/Relogio-TAG-Heuer-Carrera-Chronograph-Masculino-CBN2013FC6483-55539_1_set.webp"
+                alt="Relógio TAG Heuer Chronograph Masculino" class="card__img" />
+            <div class="card__data">
+                <span class="card__description">Relógio TAG Heuer Chronograph Masculino</span>
+                <h2 class="card__title">R$ 175.000</h2>
+                <div class="preco-promocional">
+                    <span class="preco-antigo">De R$ 210.000</span>
+                    <span class="preco-novo">Por R$ 175.000</span>
+                    <img src="img/carrinho.png" alt="Carrinho" class="cart-icon" />
+                </div>
+               
+            </div></a>
+        </article>
 
- .lancamentos-section h1 {
-  font-size: 3.2rem;
-  font-weight: 400;
-  letter-spacing: 4px;
-  color: #000000;
-  text-transform: uppercase;
-  border-bottom: 1px solid #82643b;
-  display: inline-block;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-}
+    </section>
+    <style>
+        /* Seção Lançamentos */
+        .lancamentos-section {
+            text-align: center;
+            margin: 60px 0 40px;
+            font-family: 'Playfair Display', serif;
+            color: #1a1a1a;
+        }
 
-/* Container dos cards */
-.catalog-container-2 {
-  max-width: 1100px;
-  margin: 0 auto 90px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-  padding: 0 15px;
-}
+        .lancamentos-section h1 {
+            font-size: 3.2rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: #000000;
+            text-transform: uppercase;
+            border-bottom: 1px solid #82643b;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
 
-/* Card individual */
-.card__article {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(197, 168, 128, 0.15);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  border: 1px solid #e5e0d6;
-}
+        /* Container dos cards */
+        .catalog-container-2 {
+            max-width: 1100px;
+            margin: 0 auto 90px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            padding: 0 15px;
+        }
 
-.card__article:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 35px rgba(197, 168, 128, 0.3);
-  border-color: #c5a880;
-}
+        /* Card individual */
+        .card__article {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(197, 168, 128, 0.15);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            border: 1px solid #e5e0d6;
+        }
 
-.card__img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-bottom: 1px solid #f0ead8;
-  filter: brightness(0.97);
-  transition: filter 0.3s ease;
-}
+        .card__article:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 35px rgba(197, 168, 128, 0.3);
+            border-color: #c5a880;
+        }
 
-.card__img:hover {
-  filter: brightness(1);
-}
+        .card__img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid #f0ead8;
+            filter: brightness(0.97);
+            transition: filter 0.3s ease;
+        }
 
-/* Conteúdo do card */
-.card__data {
-  padding: 22px 28px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+        .card__img:hover {
+            filter: brightness(1);
+        }
 
-.card__description {
-  font-size: 1rem;
-  color: #5a5a5a;
-  margin-bottom: 8px;
-  font-weight: 500;
-  font-style: italic;
-}
+        /* Conteúdo do card */
+        .card__data {
+            padding: 22px 28px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-.card__title {
-  font-size: 1.4rem;
-  color: #222222;
-  margin-bottom: 18px;
-  font-weight: 600;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 0.04em;
-}
+        .card__description {
+            font-size: 1rem;
+            color: #5a5a5a;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-style: italic;
+        }
 
-/* Preços */
-.preco-promocional {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 24px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
+        .card__title {
+            font-size: 1.4rem;
+            color: #222222;
+            margin-bottom: 18px;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.04em;
+        }
 
-.preco-antigo {
-  font-size: 0.85rem;
-  color: #a3a3a3;
-  text-decoration: line-through;
-  font-weight: 400;
-}
+        /* Preços */
+        .preco-promocional {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
 
-.preco-novo {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #bfa76a; /* dourado suave */
-}
+        .preco-antigo {
+            font-size: 0.85rem;
+            color: #a3a3a3;
+            text-decoration: line-through;
+            font-weight: 400;
+        }
 
-/* Ícone do carrinho */
-.cart-icon {
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
-  transition: transform 0.25s ease;
-  fill: #c5a880;
-}
+        .preco-novo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #bfa76a;
+            /* dourado suave */
+        }
 
-.cart-icon:hover {
-  transform: scale(1.2);
-  fill: #a88e50;
-}
+        /* Ícone do carrinho */
+        .cart-icon {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            transition: transform 0.25s ease;
+            fill: #c5a880;
+        }
 
-/* Botão */
-.card__button {
-  display: inline-block;
-  text-align: center;
-  background-color: transparent;
-  border: 2px solid #c5a880;
-  color: #c5a880;
-  padding: 10px 0;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  user-select: none;
-  transition: all 0.3s ease;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 0.1em;
-}
+        .cart-icon:hover {
+            transform: scale(1.2);
+            fill: #a88e50;
+        }
 
-.card__button:hover {
-  background-color: #c5a880;
-  color: #1a1a1a;
-  border-color: #a88e50;
-}
-</style>
+        /* Botão */
+        .card__button {
+            display: inline-block;
+            text-align: center;
+            background-color: transparent;
+            border: 2px solid #c5a880;
+            color: #c5a880;
+            padding: 10px 0;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            user-select: none;
+            transition: all 0.3s ease;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.1em;
+        }
 
-
-<!-- em breve style -->
-<style>
-  .relogio {
-    background-color: #121212; /* fundo escuro elegante */
-    padding: 50px 20px;
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    color: #f0f0f0;
-  }
-
-  .relogio h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-    color: #ffffff;
-  }
-
-  .relogio-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  .relogio-item {
-    flex: 1 1 280px;
-    max-width: 320px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
-    background-color: #222;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-
-  .relogio-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 30px rgba(255, 215, 0, 0.8); /* leve brilho dourado no hover */
-  }
-
-  .relogio-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 15px;
-    object-fit: cover;
-  }
-</style>
+        .card__button:hover {
+            background-color: #c5a880;
+            color: #1a1a1a;
+            border-color: #a88e50;
+        }
+    </style>
 
 
+    <!-- em breve style -->
+    <style>
+        .relogio {
+            background-color: #121212;
+            /* fundo escuro elegante */
+            padding: 50px 20px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            color: #f0f0f0;
+        }
 
- <section class="novidade-luxury-container">
-  <div class="video-wrapper">
-    <video autoplay muted loop playsinline>
-      <source src="videos/relogio2.mp4" type="video/mp4">
-    </video>
-  </div>
+        .relogio h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
 
-  <section class="luxury-section">
-    <h1 class="luxury-title">Joias que eternizam momentos</h1>
-    <p class="luxury-text">
-      Na <strong>Joalheria Compromise</strong>, cada peça é uma obra de arte criada com excelência, luxo e
-      sofisticação. Nossas joias são produzidas com materiais nobres como ouro 18k, prata 925, diamantes e
-      pedras preciosas selecionadas, garantindo durabilidade, brilho e exclusividade em cada detalhe.
-    </p>
-    <p class="luxury-text">
-      Oferecemos mais que acessórios — entregamos símbolos de elegância e histórias que duram para sempre.
-      Qualidade impecável, design refinado e um compromisso com a beleza atemporal fazem da nossa joalheria a
-      escolha perfeita para quem valoriza o que é único.
-    </p>
-  </section>
-</section>
+        .relogio-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .relogio-item {
+            flex: 1 1 280px;
+            max-width: 320px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
+            background-color: #222;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .relogio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(255, 215, 0, 0.8);
+            /* leve brilho dourado no hover */
+        }
+
+        .relogio-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+    </style>
 
 
 
-<section style="text-align: center; padding: 40px 20px; background-color:rgb(216, 194, 141);">
-  <img src="img/anelnovo.png" alt="Anel edição limitada" style="
+    <section class="novidade-luxury-container">
+        <div class="video-wrapper">
+            <video autoplay muted loop playsinline>
+                <source src="videos/relogio2.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <section class="luxury-section">
+            <h1 class="luxury-title">Joias que eternizam momentos</h1>
+            <p class="luxury-text">
+                Na <strong>Joalheria Compromise</strong>, cada peça é uma obra de arte criada com excelência, luxo e
+                sofisticação. Nossas joias são produzidas com materiais nobres como ouro 18k, prata 925, diamantes e
+                pedras preciosas selecionadas, garantindo durabilidade, brilho e exclusividade em cada detalhe.
+            </p>
+            <p class="luxury-text">
+                Oferecemos mais que acessórios — entregamos símbolos de elegância e histórias que duram para sempre.
+                Qualidade impecável, design refinado e um compromisso com a beleza atemporal fazem da nossa joalheria a
+                escolha perfeita para quem valoriza o que é único.
+            </p>
+        </section>
+    </section>
+
+
+
+    <section style="text-align: center; padding: 40px 20px; background-color:rgb(216, 194, 141);">
+        <img src="img/anelnovo.png" alt="Anel edição limitada" style="
     width: 100%;
     max-width: 360px;
     height: auto;
@@ -707,18 +713,18 @@
     margin-bottom: 30px;
   ">
 
-  <h3 style="
+        <h3 style="
     color: #000000;
     font-size: 1.4rem;
     font-family: 'Georgia', serif;
     margin-bottom: 20px;
     line-height: 1.5;
   ">
-    Edição Limitada<br>
-    Anel em Ouro com Diamante Rosa Polido 
-  </h3>
+            Edição Limitada<br>
+            Anel em Ouro com Diamante Rosa Polido
+        </h3>
 
-  <button style="
+        <button style="
     background-color: #897d33;
     color: #fff;
     border: none;
@@ -730,9 +736,9 @@
     opacity: 0.9;
     transition: all 0.3s ease;
   " disabled>
-    Ainda não disponível
-  </button>
-</section>
+            Ainda não disponível
+        </button>
+    </section>
 
 
 

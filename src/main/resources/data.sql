@@ -25,14 +25,14 @@ INSERT IGNORE INTO tb_tipo_produto (id_tipo_produto, nome_tipo_produto, descrica
 
 -- Inserindo Produtos
 INSERT IGNORE INTO tb_produto (id_produto, categoria, nome_produto, ornamentos, preco, tipo_produto, img_url) VALUES
-(1, 'Aneis', 'Anel de diamante rosa', 'Diamante Rosa', 155.4, 2, 'https://imagem.com'),
-(2, 'Aneis', 'Anel com pérola e ouro branco', 'Ouro Branco', 1928.8, 2, 'https://imagem.com'),
-(3, 'Aneis', 'Anel de prata com pedras de diamante', 'Diamante', 1333.2, 2, 'https://imagem.com'),
-(4, 'Aneis', 'Anel de prata e pedras de diamantes', 'Diamante', 196.1, 2, 'https://imagem.com'),
-(5, 'Aneis', 'Anel florirose', 'Rubi', 150.1, 4, 'https://imagem.com'),
-(6, 'Brinco', 'Brinco Cravejado de Diamante', 'Diamante', 110.1, 2, 'https://imagem.com'),
-(7, 'Brinco', 'Argola Ouro Amarelo', 'Nenhum', 330.1, 1, 'https://imagem.com'),
-(8, 'Relógios', 'Relógio cravejado banhado a ouro branco', 'Nenhum', 1045.1, 2, 'https://imagem.com'),
+(1, 'Aneis', 'Anel de diamante rosa', 'Diamante Rosa', 155.4, 2, 'https://lojavivara.vtexassets.com/arquivos/ids/745079-1600-1600/Anel-Color-em-Prata-925-com-Rodolita-e-Topazios-9262_1_set.jpg?v=638437288999570000'),
+(2, 'Aneis', 'Anel com pérola e ouro branco', 'Ouro Branco', 1928.8, 2, 'https://lojavivara.vtexassets.com/arquivos/ids/747139-1600-1600/Anel-Conjunto-Especial-em-Ouro-Branco-18k-com-Perola-e-Diamantes-76630_1_set.jpg?v=638437291463000000'),
+(3, 'Aneis', 'Anel de prata com pedras de diamante', 'Diamante', 1333.2, 2, 'https://pandorajoias.vtexassets.com/arquivos/ids/381019/192611C01-54_V1.png?v=638799143478270000'),
+(4, 'Aneis', 'Anel de prata e pedras de diamantes', 'Diamante', 196.1, 2, 'https://lojavivara.vtexassets.com/arquivos/ids/900254-1600-1600/Anel-Life-Skyline-II-em-Prata-925-com-Pedras-Incolores-103829_1_set.jpg?v=638699657129070000'),
+(5, 'Aneis', 'Anel florirose', 'Rubi', 150.1, 4, 'https://pt.pandora.net/dw/image/v2/BJRN_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dw43667cd3/productimages/singlepackshot/188421C04_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5'),
+(6, 'Brinco', 'Brinco Cravejado de Diamante', 'Diamante', 110.1, 2, 'https://lojavivara.vtexassets.com/arquivos/ids/822674/Argola-Life-Maxi-II-Prata-Cravejado-69564_1_set.jpg?v=638466734808170000'),
+(7, 'Brinco', 'Argola Ouro Amarelo', 'Nenhum', 330.1, 1, 'https://lojavivara.vtexassets.com/arquivos/ids/782282-1600-1600/Argola-Redonda-em-Ouro-Amarelo-18k-19mm-6685_1_set.jpg?v=638441337712330000'),
+(8, 'Relógios', 'Relógio cravejado banhado a ouro branco', 'Nenhum', 1045.1, 2, 'https://tiffany.vtexassets.com/arquivos/ids/174497/relogio-atlas-2-ponteiros-24-mm-em-aco-inoxidavel-com-diamantes-62867469_1.jpg?v=638309132144300000'),
 (9, 'Pulseira', 'Pulseira de Prata coração', 'Nenhum', 720.1, 2, 'https://imagem.com'),
 (10, 'Pulseira', 'Pulseira Cravejada Ouro-rose', 'Nenhum', 215.1, 4, 'https://imagem.com'),
 (11, 'Pulseira', 'Pulseira-rose banhada a Ouro', 'Nenhum', 135.1, 4, 'https://imagem.com'),

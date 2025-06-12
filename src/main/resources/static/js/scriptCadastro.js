@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		);
 
 
-            alert('Usuário cadastrado com sucesso!\nNome: ' + data.nomeUsuario);
             window.location.href = 'endereco.html';
         })
         .catch(error => { 

@@ -70,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const errorData = await response.json().catch(() => ({}));
                 throw new Error(errorData.message || "Erro ao cadastrar o endereço do cliente");
             } else {
-                alert("Endereço cadastrado com sucesso!");
                 window.location.href = 'loginCliente.html';
             }
         } catch (error) {

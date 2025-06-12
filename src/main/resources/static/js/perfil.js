@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 //botão de voltar
     document.getElementById('voltarBtn').addEventListener('click', () => {
-        window.location.href = 'index.html';
+        window.location.href = 'inicio.html';
     } );
 
     // Opcional: Botão para deletar conta

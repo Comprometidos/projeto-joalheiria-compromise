@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="./css/produto.css">
 </head>
 <body>
-    <div class="product-container">
-        <div class="product-image-container">
-            <img id="imgUrl" src="" alt="Carregando imagem do produto...">
-        </div>
-        <div class="info">
-            <h1 id="produto-nome"></h1>
-            <p id="produto-descricao" class="produto-descricao"></p>
-            <p id="produto-preco" class="produto-preco"></p>
-            <button class="btn-comprar">Comprar Agora</button>
-        </div>
-    </div>
+	<div class="container">
+	        <div class="product-img">
+	            <img src="" alt="" id="produto-img">  <!-- imagem do produto -->
+	        </div>
+	        <div class="product-details">
+	            <h1 id="produto-nome"></h1>  <!-- nome do produto -->
+	            <p class="produto-preco" id="produto-preco"></p>  <!-- preço do produto -->
+	            <p class="produto-descricao" id="produto-descricao"></p>  <!-- descrição do produto -->
+	            <div class="cep-container">
+	                <input type="text" placeholder="Insira seu CEP">  <!-- input para CEP -->
+	                <button class="cep-button">Calcular Frete</button>  <!-- botão calcular frete -->
+	            </div>
+	            <a href="https://w.app/zss7ki" target="_parent"><button class="buy-button">Encomendar</button></a>  <!-- botão encomendar -->
+	            <button class="cart-button">Adicionar ao Carrinho</button>  <!-- botão adicionar ao carrinho -->
 
-    <script src="produto.js"></script>
+    <script src="./js/Produto.js"></script>
 </body>
 </html>

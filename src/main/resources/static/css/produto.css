@@ -1,182 +1,264 @@
-body {
+/* Estilos Gerais */
+:root {
+    --primary-color: #d4af37; /* Dourado clássico para joalheria */
+    --secondary-color: #333;
+    --light-color: #f8f8f8;
+    --dark-color: #222;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    background-color: rgb(192, 192, 192);
-    color: #333;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
 }
 
-.product-container {
+body {
+    background-color: #fff;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 0;
+}
+
+/* Container Principal */
+.container {
     display: flex;
-    flex-wrap: wrap;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    padding: 30px;
-    margin-top: 20px;
-    gap: 30px;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    gap: 4rem;
 }
 
-.product-image-container {
+/* Imagem do Produto */
+.product-img {
     flex: 1;
-    min-width: 300px;
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.info {
-    flex: 2;
-    min-width: 300px;
-}
-
-#produto-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-#produto-img:hover {
-    transform: scale(1.03);
-}
-
-h1 {
-    color: rgb(0, 0, 0);
-    font-size: 2.2rem;
-    margin: 0 0 20px 0;
-    letter-spacing: 1px;
-}
-
-h2 {
-    color: rgb(0, 0, 0);
-    font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-#produto-descricao {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 25px;
-}
-
-#produto-preco {
-    color: rgb(0, 0, 0);
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 20px 0;
-}
-
-.btn-comprar {
-    display: inline-block;
-    background-color: #00c853;
-    color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 30px;
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-comprar:hover {
-    background-color: #009944;
-}
-
-.product-details {
-    margin-top: 40px;
-}
-
-.details-title {
-    color: rgb(0, 0, 0);
-    border-bottom: 2px solid #f0d0d8;
-    padding-bottom: 8px;
-    font-size: 1.5rem;
-    margin-top: 30px;
-}
-
-.specs {
-    background-color: #fdf9fa;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 15px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.highlight {
-    color: rgb(128, 128, 128);
-    font-weight: 600;
-}
-
-.measures-tab {
-    margin-top: 30px;
-    border: 1px solid rgb(192, 192, 192);
-    border-radius: 8px;
+    min-height: 500px;
+    position: relative;
     overflow: hidden;
 }
 
-.tab-header {
-    background-color: rgb(192, 192, 192);
-    color: white;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-weight: 600;
+.product-img img {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    z-index: 2;
+}
+
+.product-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.product-img:hover img {
+    transform: scale(1.03);
+}
+
+/* Detalhes do Produto */
+.product-details {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.product-details h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.produto-preco {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.produto-preco::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.produto-descricao {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.stock {
+    color: var(--success-color);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    font-size: 1rem;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.stock::before {
+    content: "•";
+    color: var(--success-color);
+    font-size: 1.5rem;
+}
+
+/* Formulário de CEP */
+.cep-container {
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 1rem;
     align-items: center;
 }
 
-.tab-header::after {
-    content: '▼';
-    font-size: 0.9rem;
+.cep-container input {
+    flex: 1;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.tab-header.active::after {
-    content: '▲';
+.cep-container input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
 }
 
-.tab-content {
-    padding: 20px;
-    display: none;
-    background-color: white;
+.cep-button {
+    padding: 0.9rem 1.8rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.measures-table {
+.cep-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Botões */
+.buy-button, .cart-button {
+    display: block;
     width: 100%;
-    border-collapse: collapse;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.measures-table th, .measures-table td {
-    border: 1px solid rgb(192, 192, 192);
-    padding: 10px;
-    text-align: left;
+.buy-button {
+    background-color: var(--primary-color);
+    color: white;
 }
 
-.measures-table th {
-    background-color: #fdf9fa;
+.buy-button:hover {
+    background-color: #c19b2c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 768px) {
-    .product-container {
+.cart-button {
+    background-color: white;
+    color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.cart-button:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .container {
         flex-direction: column;
-        padding: 20px;
+        gap: 2rem;
     }
     
-    .product-image-container, .product-info {
-        min-width: 100%;
+    .product-img {
+        min-height: 400px;
     }
     
-    h2 {
-        font-size: 1.5rem;
+    .product-details {
+        padding: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 1rem;
+        margin: 1rem auto;
     }
     
-    #produto-preco {
-        font-size: 1.5rem;
+    .product-img {
+        min-height: 300px;
+        padding: 1.5rem;
+    }
+    
+    .product-details h1 {
+        font-size: 2rem;
+    }
+    
+    .produto-preco {
+        font-size: 1.8rem;
+    }
+    
+    .cep-container {
+        flex-direction: column;
+    }
+    
+    .cep-container input,
+    .cep-button {
+        width: 100%;
+    }
+    
+    .buy-button, 
+    .cart-button {
+        padding: 1rem;
     }
 }

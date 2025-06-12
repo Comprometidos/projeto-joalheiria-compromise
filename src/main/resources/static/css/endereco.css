@@ -1,5 +1,5 @@
 body {
-  background-color: #ccc;
+  background-color: rgb(216, 194, 141);
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
@@ -61,15 +61,15 @@ input[type="submit"]:hover {
 button{
   width: 100%;
   border-radius: 50px;
-  border: 2px solid #084b53;
-  background-color: #084b53;
-  color: #f8f8f8;
+  border: 2px solid rgb(167, 144, 91);
+  background-color: rgb(167, 144, 91);
+  color: rgb(255, 255, 255);
   font-weight: bold;
   cursor: pointer;
   padding: 15px;
 }
 button:hover{
-  border: 2px solid #0a707b;
-  background-color: #0a707b;
-  color: aliceblue;
+  border: 2px solid rgb(216, 194, 141);
+  background-color: rgb(216, 194, 141);
+  color: rgb(255, 255, 255);
 }
