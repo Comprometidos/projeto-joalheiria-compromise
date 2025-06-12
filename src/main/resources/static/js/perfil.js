@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'loginCliente.html';
     });
 
+    
+//botão de voltar
+    document.getElementById('voltarBtn').addEventListener('click', () => {
+        window.location.href = 'index.html';
+    } );
+
     // Opcional: Botão para deletar conta
     document.getElementById('deleteBtn')?.addEventListener('click', () => {
         if (confirm('Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.')) {
